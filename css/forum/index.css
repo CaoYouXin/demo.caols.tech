@@ -3,7 +3,15 @@ html {
 }
 
 body {
-    background-color: bisque;
+    background-color: #F5F6EB;
+}
+
+a {
+    color: #34352C;
+}
+
+a:hover {
+    text-shadow: 1px 1px 2px #00f;
 }
 
 .content {
@@ -15,7 +23,7 @@ body {
     width: 100%;
     height: 100px;
 
-    background-color: aqua;
+    background-color: #EFF0DC;
 }
 
 .content > .header > .logo {
@@ -40,7 +48,7 @@ body {
 
 .content > .header > .titles {
     columns: 5 8rem;
-    column-rule: 1px solid #0ee;
+    column-rule: 1px solid #C9CABB;
 
     line-height: 100px;
 }
@@ -54,7 +62,8 @@ body {
 }
 
 .content > .header > .titles > a:hover {
-    background-color: #00eeee;
+    text-shadow: none;
+    background-color: #F5F6EB;
 }
 
 .content > .hot-names {
@@ -63,9 +72,9 @@ body {
 
     padding: 1rem;
 
-    border: 1px groove #0000ff;
+    border: 1px groove #C9CABB;
 
-    background-color: brown;
+    background-color: #34352C;
 }
 
 .content > .hot-names > .category {
@@ -84,20 +93,27 @@ body {
 .content > .hot-names > .category:before {
     content: attr(data-rel);
     display: inline-block;
-    width: 5em;
+    width: 4em;
+    color: #EFF0DC;
 }
 
 .content > .hot-names > .category > a {
     display: inline-block;
 
+    color: #EFF0DC;
+
     text-decoration: none;
     padding: 0 0.5em;
+}
+
+.content > .hot-names > .category > a:hover {
+    text-shadow: 1px 1px 2px #fff;
 }
 
 .content > .hot-names > .category > a:first-child:before {
     content: ":";
     display: inline-block;
-    color: black;
+    color: #EFF0DC;
 }
 
 .content > .hot-articles {
@@ -105,7 +121,7 @@ body {
     height: 800px;
     float: left;
 
-    background-color: cyan;
+    background-color: #EFF0DC;
 
 }
 
@@ -126,13 +142,17 @@ body {
     height: 2em;
     line-height: 2em;
     font-size: 1rem;
-
-    background-color: white;
+    color: #EFF0DC;
+    background-color: #34352C;
 }
 
 .content > .hot-articles > .hot-article.image > .img {
     margin: 0.5em 0;
     overflow: hidden;
+}
+
+.content > .hot-articles > .hot-article.image > .img:hover {
+    background-color: #F5F6EB;
 }
 
 .content > .hot-articles > .hot-article.image > .img > img {
@@ -150,6 +170,7 @@ body {
     width: 70%;
     height: 3em;
     font-size: 1rem;
+    color: #34352C;
     line-height: 1rem;
     overflow: hidden;
 }
@@ -248,12 +269,14 @@ body {
     height: 100px;
 
     float: left;
+    cursor: pointer;
 
-    background-color: aliceblue;
+    color: #EFF0DC;
+    background-color: #34352C;
 
     font-size: 1rem;
     line-height: 100px;
     text-align: center;
 
-    text-shadow: 1px 1px 2px #3c36ff;
+    text-shadow: 1px 1px 2px #ffffff;
 }
