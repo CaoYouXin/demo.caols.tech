@@ -1,0 +1,359 @@
+html {
+    font-size: 16px;
+}
+
+body > * {
+    width: 100%;
+}
+
+header {
+    height: 80px;
+    background-color: transparent;
+
+    padding: 0 2rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header:after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    box-shadow: 0 0 4px 5px #F5F6EB;
+}
+
+header > .logo {
+    width: 300px;
+    height: 80px;
+
+    float: left;
+
+    line-height: 80px;
+    font-size: 1.5rem;
+    text-align: right;
+    text-shadow: 0 0 3px 5px #34352C;
+
+    color: white;
+    background: url("../../image/120x80-logo.png") no-repeat 0 50%;
+}
+
+header > .links {
+    height: 80px;
+    line-height: 80px;
+
+    float: right;
+
+    font-size: 1.5rem;
+}
+
+header > .links > a {
+    padding: 0 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+header.solid {
+    background-color: #F5F6EB;
+}
+
+header.solid:after {
+    box-shadow: 0 0 4px 5px #C9CABB;
+}
+
+header.solid > .logo {
+    color: #34352C;
+}
+
+header.solid > .links > a {
+    color: #34352C;
+}
+
+.banner, .intro, .pros, .price, .contact, footer {
+    position: absolute;
+    z-index: -1;
+    text-align: center;
+}
+
+.banner:after, .intro:after, .pros > *:after, .price > *:after, .contact:after, footer:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.banner > .wrapper, .intro > .wrapper, .pros > * > .wrapper, .price > * > .wrapper, .contact > .wrapper {
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.banner {
+    height: 100%;
+    background: #34352C url("../../image/banner.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.banner > .wrapper {
+    color: #F5F6EB;
+}
+
+.banner > .wrapper > h1 {
+    font-size: 3rem;
+    padding: 0.5em;
+}
+
+.banner > .wrapper > p {
+    font-size: 1.5rem;
+    padding: 0.5em 0.5em 2em;
+}
+
+.banner > .wrapper > .btns > * + * {
+    margin-left: 1em;
+}
+
+.banner > .wrapper a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 1em;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    line-height: 2em;
+    padding: 0 1em;
+    cursor: pointer;
+}
+
+.banner > .wrapper a.register {
+    color: #F5F6EB;
+    background-color: red;
+}
+
+.banner > .wrapper a.register:hover {
+    background-color: orangered;
+}
+
+.banner > .wrapper a.login {
+    color: #34352C;
+    background-color: white;
+}
+
+.banner > .wrapper a.login:hover {
+    background-color: #F5F6EB;
+}
+
+.intro {
+    top: 100%;
+    height: 420px;
+}
+
+.intro > .wrapper > h1, .pros > *:nth-child(1) > .wrapper > h1, .price > *:nth-child(1) > .wrapper > h1, .contact > .wrapper > h1 {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.intro > .wrapper > h1:after, .pros > *:nth-child(1) > .wrapper > h1:after, .price > *:nth-child(1) > .wrapper > h1:after, .contact > .wrapper > h1:after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 10px;
+
+    position: relative;
+    left: 40%;
+
+    margin: 1em 0;
+
+    background-color: black;
+}
+
+.intro > .wrapper > p, .contact > .wrapper > p {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+}
+
+.intro > .wrapper > a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 1em;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    line-height: 2em;
+    padding: 0 1em;
+    cursor: pointer;
+    color: #34352C;
+    background-color: #F5F6EB;
+
+    transition: transform .1s;
+}
+
+.intro > .wrapper > a:hover {
+    color: #34352C;
+    background-color: #EFF0DC;
+}
+
+.pros {
+    top: calc(100% + 420px);
+    height: 460px;
+
+    background-color: #CCCCCC;
+}
+
+.pros > * {
+    width: 100%;
+
+    text-align: center;
+}
+
+.pros > *:nth-child(1) {
+    height: 160px;
+}
+
+.pros > *:nth-child(1) > .wrapper > h1, .price > *:nth-child(1) > .wrapper > h1 {
+    color: white;
+}
+
+.pros > *:nth-child(1) > .wrapper > h1:after, .price > *:nth-child(1) > .wrapper > h1:after {
+    background-color: white;
+}
+
+.pros > *:nth-child(2) {
+    height: 300px;
+}
+
+.pros > *:nth-child(2) > .wrapper {
+    width: 80%;
+}
+
+.pros > *:nth-child(2) > .wrapper > .pro {
+    width: 25%;
+    height: 250px;
+    float: left;
+    color: white;
+    padding: 1em;
+}
+
+.pros > *:nth-child(2) > .wrapper > .pro:before {
+    content: attr(data-icon);
+    display: block;
+    color: #34352C;
+    font-size: 5rem;
+
+    transform: scale(1) rotate(0deg);
+    transition: transform 1s;
+    transition-timing-function: cubic-bezier(0,1,1,1);
+}
+
+.pros > *:nth-child(2) > .wrapper > .pro.stage:before {
+    transform: scale(.1) rotate(-180deg);
+}
+
+.pros > *:nth-child(2) > .wrapper > .pro > h1 {
+    color: #F5F6EB;
+    font-size: 2rem;
+    padding: 0.5em;
+}
+
+.price {
+    top: calc(100% + 880px);
+    height: 750px;
+
+    background-color: #CCCCCC;
+}
+
+.price > *:nth-child(1) {
+    height: 250px;
+}
+
+.price > *:nth-child(2) {
+    height: 500px;
+}
+
+.price > *:nth-child(2) > .wrapper {
+    width: 100%;
+}
+
+.price > *:nth-child(2) > .wrapper > .package {
+    width: calc(25% - 2rem);
+    height: 450px;
+
+    float: left;
+
+    margin: 1rem;
+
+    background-color: #34352C;
+
+    transform: scale(1);
+    transition: transform 1s;
+}
+
+.price > *:nth-child(2) > .wrapper > .package:before, .price > *:nth-child(2) > .wrapper > .package:after {
+    display: block;
+
+    width: 100%;
+    height: 50px;
+
+    font-weight: bolder;
+
+    text-align: center;
+    line-height: 50px;
+}
+
+.price > *:nth-child(2) > .wrapper > .package:last-child:before, .price > *:nth-child(2) > .wrapper > .package:last-child:after {
+    color: white;
+    background-color: red;
+}
+
+.price > *:nth-child(2) > .wrapper > .package:before {
+    content: attr(data-rel);
+
+    background-color: #EFF0DC;
+}
+
+.price > *:nth-child(2) > .wrapper > .package:after {
+    content: '购 买';
+
+    color: white;
+    background-color: #60C0DC;
+}
+
+.price > *:nth-child(2) > .wrapper > .package > .content {
+    width: 100%;
+    height: 350px;
+
+    line-height: 50px;
+    font-weight: lighter;
+
+    color: #F5F6EB;
+
+    text-align: center;
+}
+
+.price > *:nth-child(2) > .wrapper > .package:hover {
+    transform: scale(1.1);
+}
+
+.contact {
+    top: calc(100% + 1630px);
+    height: 420px;
+}
+
+footer {
+    top: calc(100% + 2050px);
+    height: 60px;
+
+    color: #EFF0DC;
+    background-color: #34352C;
+
+    font-size: 1rem;
+    line-height: 60px;
+    text-align: center;
+
+    text-shadow: 1px 1px 2px #ffffff;
+}
