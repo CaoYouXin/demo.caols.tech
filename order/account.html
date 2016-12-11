@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>帐号</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/clear.css">
+    <link rel="stylesheet" type="text/css" href="../css/order/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/order/account.css">
+</head>
+<body>
+    <header class="solid">
+        <div class="logo">Awesomeness</div>
+        <div class="links">
+            <a href="index.html">首页</a><a href="index.html#intro">产品介绍</a><a href="index.html#pros">产品优势</a><a href="index.html#price">产品价格</a><a href="index.html#contact">联系我们</a><a href="#">客户中心</a>
+        </div>
+    </header>
+
+    <div class="outer">
+        <div class="inner">
+            <div class="btn register">注 册</div>
+            <div class="btn login">登 录</div>
+            <div class="form register">
+                <form action="#register">
+                    <label for="r-email">邮箱</label>
+                    <input id="r-email" type="email" name="email" required>
+
+                    <label for="r-pwd">密码</label>
+                    <input id="r-pwd" type="password" name="pwd" required minlength="6">
+
+                    <label for="r-pwd-confirm">确认密码</label>
+                    <input id="r-pwd-confirm" type="password" name="pwd-confirm" required minlength="6">
+
+                    <input type="submit" value="注 册">
+                    <input type="reset" value="重 置">
+                </form>
+            </div>
+            <div class="form login">
+                <form action="#login">
+                    <label for="l-email">邮箱</label>
+                    <input id="l-email" type="email" name="email" required>
+
+                    <label for="l-pwd">密码</label>
+                    <input id="l-pwd" type="password" name="pwd" required minlength="6">
+
+                    <input type="submit" value="登 录">
+                    <input type="reset" value="重 置">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>我做Demo我开心 Copyright © 2016</footer>
+
+    <script src="../js/order/account.js"></script>
+</body>
+</html>

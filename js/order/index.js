@@ -83,6 +83,11 @@
             if (e.target === this) {
                 return false;
             }
+
+            if (e.target.getAttribute('href').substr(0, 1) !== '#') {
+                return true;
+            }
+
             e.preventDefault();
 
             var id = e.target.getAttribute('href').substr(1);

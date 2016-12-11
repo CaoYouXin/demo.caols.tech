@@ -1,0 +1,110 @@
+.outer {
+    position: absolute;
+    top: 80px;
+    bottom: 60px;
+
+    width: 100%;
+
+    background-color: #F5F6EB;
+
+    text-align: center;
+}
+
+.outer:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.outer > .inner {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 500px;
+    height: 300px;
+
+    /*background-color: #34352C;*/
+}
+
+.outer > .inner > .btn {
+    width: 50%;
+    height: 3em;
+
+    float: left;
+
+    font-size: 1.2rem;
+    font-weight: bolder;
+    line-height: 3em;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+
+    color: #34352C;
+    background-color: #EFF0DC;
+}
+
+.outer > .inner > .btn.show {
+    color: white;
+    background-color: #DDDDDD;
+}
+
+.outer > .inner > .form {
+    width: 100%;
+    height: auto;
+
+    float: left;
+
+    font-size: 0;
+    padding: 0 10%;
+
+    border: 1px solid #DDDDDD;
+}
+
+.outer > .inner > .form:not(.show) {
+    display: none;
+}
+
+.outer > .inner > .form label, .outer > .inner > .form input {
+    display: inline-block;
+
+    font-size: 1.1rem;
+    line-height: 2em;
+
+    margin: 0.5em 0;
+}
+
+.outer > .inner > .form label {
+    width: 40%;
+}
+
+.outer > .inner > .form input {
+    width: 60%;
+
+    outline: none;
+    border: 1px solid #DDDDDD;
+
+    transition: box-shadow .3s ease-in-out;
+}
+
+.outer > .inner > .form input[type="submit"],
+.outer > .inner > .form input[type="reset"] {
+    width: 40%;
+    margin: 3% 5% 5%;
+
+}
+
+.outer > .inner > .form input[type="email"]:focus,
+.outer > .inner > .form input[type="password"]:focus {
+    box-shadow: 0 0 6px blue;
+}
+
+footer {
+    position: fixed;
+    top: calc(100% - 60px);
+}
