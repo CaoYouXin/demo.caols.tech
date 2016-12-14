@@ -26,6 +26,12 @@
                 //Implement you own means of displaying error messages to the user here.
                 // pwdConfirm.focus();
             }
+
+            sessionStorage.setItem('logged', 'virgin');
+        }, false);
+
+        document.querySelector('.form.login > form').addEventListener('submit', function (e) {
+            sessionStorage.setItem('logged', 'virgin');
         }, false);
     })();
 
@@ -43,6 +49,10 @@
                     it = it.nextElementSibling;
                 }
             }
+        };
+
+        if (sessionStorage.getItem('logged')) {
+            location.href = 'customer_center.html';
         }
     })();
 

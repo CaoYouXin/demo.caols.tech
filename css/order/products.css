@@ -1,0 +1,170 @@
+body > h1 {
+    margin-bottom: 5rem;
+}
+
+.category, .packages {
+    float: left;
+    padding-right: 2rem;
+}
+
+.category > hr,
+.packages > hr {
+    height: 1px;
+    background-color: #DDDDDD;
+
+    margin: 1rem 0;
+}
+
+.category {
+    width: 22.5%;
+}
+
+.packages {
+    width: 77.5%;
+}
+
+.category > .cate {
+    width: 100%;
+    height: 2em;
+
+    font-size: 1.5rem;
+    line-height: 2em;
+
+    margin-top: .3em;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.category > .cate.active:before,
+.category > .cate.active:after {
+    transform: translateY(-100%);
+}
+
+.category > .cate:before,
+.category > .cate:after {
+    content: attr(data-rel);
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    transition: transform .3s ease-in-out;
+}
+
+.category > .cate:before {
+    color: #34352C;
+    background-color: #F5F6EB;
+
+    /*border-top-left-radius: 5px;*/
+    /*border-top-right-radius: 5px;*/
+}
+
+.category > .cate:after {
+    color: #F5F6EB;
+    background-color: #34352C;
+
+    /*border-bottom-left-radius: 5px;*/
+    /*border-bottom-right-radius: 5px;*/
+}
+
+.packages > .pkgs:not(.active) {
+    display: none;
+}
+
+.packages > .pkgs > .pkg {
+    width: 100%;
+    height: auto;
+
+    font-size: 1.2rem;
+
+    overflow: hidden;
+
+    border: solid 1px #DDDDDD;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.packages > .pkgs > .pkg + .pkg {
+    margin-top: 1em;
+}
+
+.packages > .pkgs > .pkg > .content {
+    width: 85%;
+
+    float: left;
+
+    padding: 0.5rem;
+}
+
+.packages > .pkgs > .pkg > .buy {
+    width: 15%;
+
+    float: right;
+}
+
+.packages > .pkgs > .pkg > .buy > .the-price {
+    width: calc(100% - 5px);
+    height: 3em;
+
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.packages > .pkgs > .pkg > .buy > .the-price:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 0;
+    height: 100%;
+}
+
+.packages > .pkgs > .pkg > .buy > .the-price > span {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.packages > .pkgs > .pkg > .buy > .the-price > span:before {
+    content: '$';
+
+    color: #34352C;
+    font-size: .8rem;
+}
+
+.packages > .pkgs > .pkg > .buy > .the-price > span:after {
+    content: '/year';
+
+    color: #34352C;
+    font-size: 1rem;
+}
+
+.packages > .pkgs > .pkg > .buy > input {
+    display: block;
+
+    width: calc(100% - 5px);
+    height: 2em;
+
+    font-size: 1.2rem;
+
+    background-color: transparent;
+    border: solid 1px #DDDDDD;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    outline: none;
+
+    transition: box-shadow .3s ease-in-out;
+}
+
+.packages > .pkgs > .pkg > .buy > input:hover {
+    box-shadow: 0 0 5px blue;
+}

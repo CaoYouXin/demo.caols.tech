@@ -88,6 +88,7 @@
 
     outline: none;
     border: 1px solid #DDDDDD;
+    border-radius: 5px;
 
     transition: box-shadow .3s ease-in-out;
 }
@@ -107,4 +108,5 @@
 footer {
     position: fixed;
     top: calc(100% - 60px);
+    left: 0;
 }
