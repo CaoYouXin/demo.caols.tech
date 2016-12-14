@@ -55,7 +55,7 @@
             console.log(num);
 
             var len = 1000, i = 0;
-            var now = document.body.scrollTop;
+            var now = document.body.scrollTop || document.documentElement.scrollTop || 0;
             var r = reinterpolate(now, num);
             var d = deinterpolate(0, len);
             // var mid = (now + num) * .3;
@@ -70,6 +70,7 @@
                 // var set = d < .3 ? int1(d) : int2(d);
                 // console.log(set);
                 document.body.scrollTop = set;
+                document.documentElement.scrollTop = set;
                 if (set === num) {
                     clearInterval(interval);
                 }

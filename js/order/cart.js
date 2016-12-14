@@ -23,6 +23,18 @@
 
             document.body.insertBefore(node, cartFooter);
         });
+
+        if (!items.length) {
+            var node = cart.cloneNode(true);
+            node.classList.remove('hidden');
+            node.removeChild(node.firstElementChild);
+            node.removeChild(node.firstElementChild);
+            node.lastElementChild.style.textAlign = 'center';
+            node.lastElementChild.style.width = '100%';
+            node.lastElementChild.textContent = '购物车没有商品';
+
+            document.body.insertBefore(node, cartFooter);
+        }
     })();
 
     (function deleteCart() {
