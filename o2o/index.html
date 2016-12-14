@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=800,user-scalable=no">-->
+
+    <title>O2O</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/clear.css">
+
+    <style>
+        body {
+            font-size: 0;
+            background-color: #60C0DC;
+        }
+
+        .phone {
+            width: 376px;
+            height: 738px;
+
+            margin: 0 auto;
+
+            background: url("../image/iphone.png") no-repeat;
+
+            transform-origin: 50% 0 0;
+            transition: all .3s ease-in-out;
+        }
+
+        iframe {
+            margin: 0;
+
+            position: relative;
+
+            width: 320px;
+            height: 480px;
+
+            left: 30px;
+            top: 130px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            document.querySelector('.phone').style.transform = 'scale(' + (window.innerHeight / 738) + ')';
+        };
+    </script>
+</head>
+<body>
+
+<div class="phone">
+    <iframe src="store.html" frameborder="0"></iframe>
+</div>
+</body>
+</html>
