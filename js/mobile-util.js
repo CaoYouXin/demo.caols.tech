@@ -54,23 +54,25 @@ window.mobileUtil = (function (win, doc) {
             }
             this.winWidth = data.width = parseInt(data.width) || 800;
 
-            if (isMobile) { // 定宽
-                if (isAndroid) {
-                    var medium_dpi = data.width / win.screen.availWidth * window.devicePixelRatio * 160;
-
-                    medium_dpi = medium_dpi.toFixed(2);
-
-                    data['target-densitydpi'] = medium_dpi;
-                } else {
-                    var scale = win.screen.availWidth / data.width;
+            // if (isMobile) { // 定宽
+            //     if (isAndroid) {
+            //         var medium_dpi = data.width / win.screen.availWidth * window.devicePixelRatio * 160;
+            //
+            //         medium_dpi = medium_dpi.toFixed(2);
+            //
+            //         data['target-densitydpi'] = medium_dpi;
+            //     } else {
+                    var scale = win.innerWidth / data.width;
 
                     scale = scale.toFixed(2);
 
                     data['initial-scale'] = data['maximum-scale'] = data['minimum-scale'] = scale;
-                }
+
+                    document.body.style.zoom = scale;
+                // }
 
                 metaEl.content = JSON.stringify(data).replace(/\s*/g, '').replace(/[{}"]/g, '').replace(/:/g, '=');
-            }
+            // }
             console.log(data);
         },
 
