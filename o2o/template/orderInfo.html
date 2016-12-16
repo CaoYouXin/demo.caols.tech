@@ -1,0 +1,94 @@
+{{#this}}
+{{#to_select}}
+<div id="order_info_advise_items">
+    <div class="order_info_title">爱车管家建议增加以下项目</div>
+    <ul class="order_info_items">
+        {{#each unselected_items}}
+        <li class="am-vertical-align">
+            <img class="am-vertical-align-middle" style="display: inline-block;" data-rel="{{id}}" src="http://7xiqe8.com2.z0.glb.qiniucdn.com/choose.png">
+            <img class="am-vertical-align-middle" style="display: none;" src="http://7xiqe8.com2.z0.glb.qiniucdn.com/unchoose2.png">
+            <span class="order_info_item_price am-vertical-align-middle">¥{{total_price}}</span>
+            <span class="order_info_item_count am-vertical-align-middle">X{{unit_count}}</span>
+            <span class="order_info_item_name am-vertical-align-middle">{{product_name}}</span>
+        </li>
+        {{/each}}
+    </ul>
+    <div id="order_info_advise_decide">
+        <button id="order_addition_reject" class="am-btn order_info_advise_reject">拒绝</button>
+        <button id="order_addition_agree" class="am-btn order_info_advise_agree">同意</button>
+    </div>
+</div>
+{{/to_select}}
+
+{{#to_selected_items}}
+<div id="order_info_selected_items">
+    <div class="order_info_title">已确认过的增项</div>
+    <ul class="order_info_items">
+        {{#each selected_items}}
+        <li>
+            <span class="order_info_item_name">{{product_name}}</span>
+            <span class="order_info_item_count">X{{unit_count}}</span>
+            <span class="order_info_item_price">{{display_status}}</span>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+{{/to_selected_items}}
+
+<div id="order_info_self_items">
+    <div class="order_info_title">自选服务项目</div>
+    <ul class="order_info_items">
+        {{#each self_items}}
+        <li>
+            <span class="order_info_item_name">{{product_name}}</span>
+            <span class="order_info_item_count">X{{unit_count}}</span>
+            <span class="order_info_item_price">¥{{total_price}}</span>
+        </li>
+        {{/each}}
+    </ul>
+    <div id="order_info_discount_wrapper" class="am-vertical-align">
+        <span class="am-vertical-align-middle">优惠</span>
+        <img class="am-vertical-align-middle" src="http://7xiqe8.com2.z0.glb.qiniucdn.com/minus.png">
+        <span class="am-vertical-align-middle">-&nbsp;&nbsp;¥{{coupon_price}}</span>
+    </div>
+</div>
+
+<ul id="order_info_keeper_info">
+    {{#each keeper_basics}}
+    <li>
+        <span>{{type}}</span>
+        <span>{{name}}</span>
+    </li>
+    {{/each}}
+</ul>
+
+<div id="order_info_user_info">
+    <div><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/location_icon.png"></div>
+    <div>
+        {{#client_basic}}
+        <div>
+            <span class="order_info_user_name">车主: {{name}}</span>
+            <span class="order_info_user_phone">{{phone_number}}</span>
+            <span class="order_info_user_car">{{car_number}}</span>
+        </div>
+        {{#location}}
+        <div>接车地点: {{address}}</div>
+        {{/location}}
+        {{/client_basic}}
+    </div>
+</div>
+
+<div class="transparent-bottom-div">
+    <div class="order-info-bottom-div">
+        {{#not_paid}}
+        <div class="order-info-not-paid"><span>未支付</span><span>¥{{not_paid_price}}</span></div>
+        {{/not_paid}}
+        {{#paid}}
+        <div class="order-info-paid"><span>已支付</span><span>¥{{paid_price}}</span></div>
+        {{/paid}}
+    </div>
+    <div class="order-info-bottom-div">
+        <button id="submit_button" class="am-btn am-btn-block order-info-submit-btn {{submit_button_class}}">{{submit_button_text}}</button>
+    </div>
+</div>
+{{/this}}

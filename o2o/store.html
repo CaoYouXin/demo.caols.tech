@@ -1,24 +1,237 @@
-<!DOCTYPE html>
-<html>
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=800,user-scalable=no">
+    <meta charset="utf-8">
 
-    <title>商城</title>
+    <meta name="viewport" content="width=750, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" href="../css/clear.css">
-    <style>
-        .test {
-            width: 800px;
-            height: 1800px;
 
-            background-color: #34352C;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <title>养爱车</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="dns-prefetch" href="http://baseimg.yangaiche.com/">
+    <link rel="dns-prefetch" href="http://7xiqe8.com2.z0.glb.qiniucdn.com/">
+
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/yac-styles.css">
+    <link rel="stylesheet" href="./css/yac-services.css">
+    <link rel="stylesheet" href="./css/yac-good-suggest.css">
+    <style type="text/css">
+        #to_show_user_win {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            z-index: 1;
+            right: 20px;
+            top: 20px;
         }
+
+        /* 轮播指示点颜色 */
+        .am-slider-a1 .am-control-nav li a {
+            background: #FFF;
+        }
+
+        .am-slider-a1 .am-control-nav li a.am-active {
+            background: #09be00;
+        }
+
+        /*  */
+        #home-page-wrapper, #banner {
+            width: 750px;
+            background: #f1f1f1;
+        }
+
+        #home-page-wrapper {
+            padding-bottom: 20px;
+        }
+
+        #location {
+            width: 750px;
+            height: 80px;
+            background-color: #fff;
+            line-height: 80px;
+            text-align: center;
+        }
+
+        #location span {
+            font-size: 32px;
+            margin-left: 20px;
+            max-width: 400px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #banner img {
+            display: block;
+            width: 750px;
+            height: 270px;
+        }
+
+        .am-list>li { border : none ;}
     </style>
 </head>
 <body>
-    <script src="../js/mobile-util.js"></script>
+<script src="../js/mobile-util.js"></script>
 
-    <div class="test"></div>
+<img id="to_show_user_win" style="display: none;" src="img/user_logo4.png"
+     data-am-offcanvas="{target: '#user-win', effect: 'overlay'}"/>
+
+<div id="user-win" class="am-offcanvas">
+    <div class="am-offcanvas-bar user-win-content">
+        <div class="left">
+            <div id="user_info" class="user-logo">
+                <img src="img/user_logo2.png">
+            </div>
+            <div class="user-info" id="user_phone">000****0000</div>
+
+            <div class="menu-info">
+                <ul class="am-list">
+                    <li><a data-rel="order_list.html" class="am-vertical-align">
+                        <img src="./img/order_icon.png" class="am-vertical-align-middle"
+                             style="margin-right: 10px;margin-left: 4px;"/>
+                        <span class="am-vertical-align-middle">我的订单</span>
+                    </a></li>
+                    <li><a data-rel="my_cars.html" class="am-vertical-align">
+                        <img src="./img/car_icon.png" class="am-vertical-align-middle">
+                        <span class="am-vertical-align-middle">我的车</span>
+                    </a></li>
+                    <li><a data-rel="my_address_manage.html" class="am-vertical-align">
+                        <img src="./img/address_icon.png" class="am-vertical-align-middle"
+                             style="margin-right: 11px;margin-left: 6px;">
+                        <span class="am-vertical-align-middle">我的地址</span>
+                    </a></li>
+                    <li><a data-rel="my_coupons.html" class="am-vertical-align">
+                        <img src="./img/coupon_icon.png" class="am-vertical-align-middle"
+                             style="margin-right: 6px;margin-left: 3px;">
+                        <span class="am-vertical-align-middle">我的优惠券</span>
+                    </a></li>
+                    <li><a data-rel="my_exam_reports.html" class="am-vertical-align">
+                        <img src="./img/export_icon.png" class="am-vertical-align-middle"
+                             style="margin-right: 6px;margin-left: 3px;">
+                        <span class="am-vertical-align-middle">检测报告单</span>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="download-div">
+                <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yac.yacapp">
+                    <img src="img/download.png"/>
+                </a>
+            </div>
+
+            <a href="tel:400-0102-766" class="side-footer am-vertical-align">
+                <u class="am-vertical-align-middle">400-0102-766</u>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="home-page-wrapper" style="display: none;">
+    <div id="location" style="display: none;" class="am-vertical-align">
+        <img src="./img/location.png" class="am-vertical-align-middle">
+        <span class="am-vertical-align-middle">...</span>
+    </div>
+
+    <div id="banner">
+
+    </div>
+
+    <ul id="services" class="services">
+        <li data-rel="car_beauty_service.html"><div><img src="../image/88x88-entrance.png" alt="汽车美容"><br><span>汽车美容</span></div></li>
+        <li data-rel="butler_pick_service.html"><div><img src="../image/88x88-entrance.png" alt="维修保养"><br><span>维修保养</span></div></li>
+        <li data-rel="tel:400-0102-766"><div><img src="../image/88x88-entrance.png" alt="呼叫管家"><br><span>呼叫管家</span></div></li>
+        <li data-rel="renewal_service.html"><div><img src="../image/88x88-entrance.png" alt="保险续险"><br><span>保险续险</span></div></li>
+        <li data-rel="set_loss_service.html"><div><img src="../image/88x88-entrance.png" alt="代办定损"><br><span>代办定损</span></div></li>
+    </ul>
+
+    <div id="good_suggest"></div>
+
+    <div id="times_card_wrapper"></div>
+</div>
+
+<!--<footer id="footer">-->
+<!--<img id="footer_close" src="./img/guanbi.png" />-->
+<!--<img src="./img/logo3.png" />-->
+<!--<span>下载养爱车客户端让养车管家找到你</span>-->
+<!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yac.yacapp">下载APP</a>-->
+<!--</footer>-->
+
+<script type="text/x-handlebars-template" id="good_suggest_tpl">
+    {{#if this.length}}
+    <ul class="good-suggest">
+    {{#each this}}
+        <li data-rel="{{link_id}}" style="background-image: url('{{title_img_view.raw_url}}?imageView2/0/w/375/interlace/1')"></li>
+    {{/each}}
+    </ul>
+    {{/if}}
+</script>
+
+<script type="text/x-handlebars-template" id="home_store_list_tpl">
+    {{#each this}}
+    <div class="am-vertical-align products-title">
+        <img class="am-vertical-align-middle" src="http://7xiqe8.com2.z0.glb.qiniucdn.com/hot.png"/>
+        <span class="am-vertical-align-middle">{{ware_type_name}}</span>
+    </div>
+
+    <ul class="home-page-products">
+        {{#each ware_list}}
+        <li class="{{odd_or_even}}" data-rel="{{ware_id}}">
+            <div>
+                {{#cover_img}}
+                <div class="home-page-products-image"><img src="{{raw_url}}"/></div>
+                {{/cover_img}}
+                <div class="home-page-products-title">{{ware_name}}</div>
+                <div class="home-page-products-price">
+                    <div>¥{{ware_mark_price}}</div>
+                    <div>¥{{ware_full_price}}</div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="store_banners_tpl">{{#this}}
+    {{#solo}}
+    <a data-rel="{{link_url}}">
+        <img src="{{image_url}}">
+    </a>
+    {{/solo}}
+
+    {{#multi}}
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
+        <ul class="am-slides">
+            {{#each data}}
+            <li>
+                <a data-rel="{{link_url}}">
+                    <img src="{{image_url}}">
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/multi}}
+    {{/this}}
+</script>
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=WVAXZ05oyNRXS5egLImmentg"></script>
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
 </body>
 </html>
+<link rel="stylesheet" href="./css/h5.css">
+<link rel="stylesheet" href="./css/yac-modal.css">

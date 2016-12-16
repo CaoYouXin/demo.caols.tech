@@ -1,0 +1,9 @@
+#title .value {
+    max-width: 556px;
+    padding: 0 20px;
+}
+
+#address input {
+    width: 570px;
+    height: 90px;
+}

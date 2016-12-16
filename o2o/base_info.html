@@ -1,0 +1,127 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>确认信息</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+
+    <script type="text/javascript">
+        function mySelect(id) {
+            document.getElementById(id).selectionStart = 0;
+            document.getElementById(id).selectionEnd = 999;
+        }
+    </script>
+</head>
+<body class="body-background-color-gray">
+<script src="../js/mobile-util.js"></script>
+
+<div class="baseinfo-wrapper">
+    <p class="am-form-help baseinfo-help-top">为方便联系您,请填写以下信息</p>
+
+    <form id="base_info_form">
+        <ul class="am-list">
+            <li class="am-g my-form-line">
+                <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">
+                        姓名
+                    </div>
+                </div>
+                <div class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                    <input type="text" onclick="mySelect('contact_name');"
+                           class="am-form-field am-vertical-align-middle"
+                           name="contact_name" id="contact_name" placeholder="请输入联系人姓名">
+                </div>
+            </li>
+            <li class="am-g my-form-line">
+                <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">
+                        电话
+                    </div>
+                </div>
+                <div class=" am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                    <input type="tel" onclick="mySelect('phone_number');" class="am-form-field am-vertical-align-middle"
+                           name="phone_number" id="phone_number" placeholder="请输入联系电话">
+                </div>
+            </li>
+            <li class="am-g my-form-line">
+                <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">
+                        接车时间
+                    </div>
+                </div>
+                <div class=" am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                    <input type="hidden" id="pick_time" name="pick_time">
+                    <input type="hidden" id="pick_time_segment" name="pick_time_segment">
+                    <select class="am-form-field am-vertical-align-middle" id="pick_time_info"></select>
+                </div>
+            </li>
+            <li class="am-g my-form-line">
+                <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">
+                        接车地址
+                    </div>
+                </div>
+                <div class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                    <input type="text" onclick="mySelect('address');"
+                           class="am-form-field baseinfo-form-locate-input am-vertical-align-middle"
+                           name="address" id="address" placeholder="限北京地区，获取中..." disabled>
+
+                    <div id="go_to_map"
+                         class="baseinfo-form-locate-img-wrapper am-vertical-align-middle am-vertical-align">
+                        <img src="./img/locate.png" alt="地图" class="baseinfo-form-locate-img am-vertical-align-middle"/>
+                    </div>
+                </div>
+            </li>
+            <li class="am-g my-form-line">
+                <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">
+                        优惠券
+                    </div>
+                </div>
+                <div id="use_coupon" class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                    <div class="my-form-label am-vertical-align-middle">0张可用</div>
+                    <img src="./img/right_arrow.png" alt="go" class="am-vertical-align-middle"/>
+                </div>
+            </li>
+            <input type="hidden" id="pay_type" name="pay_mode" value="1">
+        </ul>
+    </form>
+    <p class="am-form-help baseinfo-help-bottom">注：打开GPS功能定位将更精确</p>
+
+</div>
+<div class="baseinfo-confirm-btn-wrapper">
+    <button class="am-btn am-btn-success am-btn-block new-bottom-button" id="submit_button" disabled></button>
+</div>
+<div id="map_view" class="display-none"></div>
+<script type="text/x-handlebars-template" id="take_time_tpl">{{#each this}}
+    <option value="{{index}}">
+        <div>{{{pick_time}}}</div>
+        <div>{{{pick_time_segment}}}</div>
+    </option>
+    {{/each}}
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=WVAXZ05oyNRXS5egLImmentg"></script>
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+
+</body>
+</html>

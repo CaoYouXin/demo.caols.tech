@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=750, user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>车辆保养</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/normalize/normalize.min.css">
+    <link rel="stylesheet" href="./css/yac-styles.css">
+    <link rel="stylesheet" href="./css/yac-style-shequbanjing_store.css">
+
+    <link rel="dns-prefetch" href="http://7xiqe8.com2.z0.glb.qiniucdn.com/">
+</head>
+<body>
+<script src="../js/mobile-util.js"></script>
+
+<ul id="shequbanjing_products" class="shequbanjing-list">
+    <li style="background-image: url('http://7xiqe8.com2.z0.glb.qiniucdn.com/car_normal_care.png');" data-rel="butler_pick_service.html">
+        <div class="top-right">查看详情</div>
+        <div class="bottom">车辆常规保养</div>
+    </li>
+</ul>
+
+<script id="single_products_tpl" type="text/x-handlebars-template">
+    {{#each this}}
+        <li style="background-image: url('{{cover_img.raw_url}}?imageView2/0/w/710/h/300/interlace/1');" data-rel="{{ware_id}}">
+            <div class="top-right"><span class="dollar-sign">¥</span><span>{{ware_price_text}}</span></div>
+            <div class="bottom">{{ware_name}}</div>
+        </li>
+    {{/each}}
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+
+</body>
+</html>

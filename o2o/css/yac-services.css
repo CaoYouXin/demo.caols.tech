@@ -1,0 +1,38 @@
+ul.services {
+    width: 750px;
+    height: 166px;
+    background-color: #ffffff;
+    /*-webkit-align-items: center;*/
+    /*-ms-flex-align: center;*/
+    /*align-items: center;*/
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+}
+
+ul.services > li {
+    display: table;
+    float: left;
+    width: 20%;
+    height: 166px;
+}
+
+/*ul.services > li:after {*/
+    /*display: inline-block;*/
+    /*width: 0;*/
+    /*height: 166px;*/
+    /*content: '';*/
+    /*vertical-align: middle;*/
+    /*overflow: hidden;*/
+/*}*/
+
+ul.services > li > * {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ul.services > li > * > span {
+    font-size: 22px;
+    color: #666666;
+}

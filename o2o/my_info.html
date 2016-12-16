@@ -1,0 +1,93 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>个人信息</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+    <style>
+        .gray_button {
+            background-color: #cecece;
+            border-color: #cecece;
+            color: #aaaaaa;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        #phone-wrapper {
+            color: #333;
+            font-size: 30px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        #help-info {
+            color: #666;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .login-div {
+            margin-top: 60px;
+            background: #FFF;
+        }
+    </style>
+</head>
+<body style="background: #FFF;">
+<script src="../js/mobile-util.js"></script>
+
+<div class="login-div">
+    <div class="login-item-content">
+        <div class="am-g">
+            <div class="am-u-sm-6">
+                <input class="am-form-field" id="name" placeholder="姓名">
+                <hr data-am-widget="divider" class="am-divider am-divider-default hr-pd"/>
+            </div>
+            <div class="am-u-sm-3">
+                <button type="button" id="select-male" class="am-btn am-btn-success am-btn-block new-bottom-button">
+                    男士
+                </button>
+            </div>
+            <div class="am-u-sm-3">
+                <button type="button" id="select-female" class="am-btn am-btn-success am-btn-block new-bottom-button">
+                    女士
+                </button>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12" id="phone-wrapper">电话：<span id="phone"></span></div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12" id="help-info">如需修改电话号码，请拨打<a href="tel:400-0102-766">400-0102-766</a></div>
+        </div>
+    </div>
+
+    <div class="normal-bottom-btn-div">
+        <button type="button" id="submit-button" class="am-btn am-btn-success am-btn-block new-bottom-button">提交
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

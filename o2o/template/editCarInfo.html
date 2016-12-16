@@ -1,0 +1,70 @@
+{{#this}}
+<div class="am-vertical-align car-info" data-rel="{{car_id}}">
+    <div class="am-vertical-align-middle">
+        <img src="{{img_url}}" class="my-thumb-icon">
+    </div>
+    <div class="my-list-line-content am-vertical-align-middle">
+        <h3 class="am-list-item-hd">{{{car_number}}}</h3>
+        <div class="am-list-item-text fixed-width-content">{{{model}}}</div>
+    </div>
+</div>
+<div class="my-list-set-hd-wrapper2 am-vertical-align">
+    <div class="my-list-set-hd am-vertical-align-middle">
+        完善您的信息
+    </div>
+</div>
+<div class="my-carinfo-form-div">
+    <ul class="am-list">
+        <li class="am-g my-form-line">
+            <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                <div class="my-form-label am-vertical-align-middle">
+                    车牌号
+                </div>
+            </div>
+            <div class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                <select id="province" class="am-form-field am-form-field-1of3 am-vertical-align-middle">
+                    {{#each province_data}}
+                    <option value="{{province}}">{{{province}}}</option>
+                    {{/each}}
+                </select>
+                <input type="text" id="number" class="am-form-field am-form-field-2of3 am-vertical-align-middle" placeholder="车牌号"/>
+            </div>
+        </li>
+        <li class="am-g my-form-line">
+            <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                <div class="my-form-label am-vertical-align-middle">
+                    购车年份
+                </div>
+            </div>
+            <div class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                <select id="pick_year" class="am-form-field am-form-field-1of2 am-vertical-align-middle">
+                    {{#each year_data}}
+                    <option value="{{ninfo}}">{{{infos}}}</option>
+                    {{/each}}
+                </select>
+                <select id="pick_month" class="am-form-field am-form-field-1of2 am-vertical-align-middle">
+                    {{#each month_data}}
+                    <option value="{{ninfo}}">{{{infos}}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </li>
+        <li class="am-g my-form-line">
+            <div class="am-u-sm-4 my-form-label-wrapper am-vertical-align">
+                <div class="my-form-label am-vertical-align-middle">
+                    里程数
+                </div>
+            </div>
+            <div class="am-u-sm-8 am-form-field-wrapper am-vertical-align">
+                <input type="text" id="miles" class="am-form-field am-vertical-align-middle" placeholder="公里"/>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="normal-bottom-btn-div">
+    <button id="submit_btn" class="am-btn am-btn-success am-btn-block new-bottom-button">
+        <!--<i class="am-icon-save"></i>-->
+        保存
+    </button>
+</div>
+{{/this}}

@@ -1,0 +1,102 @@
+<style>
+    #times-card-detail-wrapper {
+        width: 640px;
+        overflow: hidden;
+
+        background: #fff;
+        margin-bottom: 30px;
+    }
+
+    #times-card-cover-wrapper {
+        width: 640px;
+        max-height: 360px;
+        overflow: hidden;
+    }
+
+    #times-card-cover-img {
+        width: 640px;
+    }
+
+    .times-card-detail-title {
+        padding: 0 30px;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .times-card-detail-title:first-child {
+        margin-top: 30px;
+        color: #333;
+    }
+
+    .times-card-detail-title:last-child {
+        margin-bottom: 30px;
+        color: #ff6600;
+    }
+
+    .times-card-detail-title:last-child span {
+        font-size: 20px;
+        color: #ff6600;
+    }
+
+    .times-card-detail-title + .times-card-detail-title {
+        margin-top: 22px;
+    }
+
+    .yac-page-hr {
+        display: block;
+        clear: both;
+        height: 1px;
+        width: 600px;
+        margin: 0 20px;
+    }
+
+    #yac-store-info {
+        height: 100px;
+        padding: 0 30px;
+        font-size: 0;
+    }
+
+    #yac-store-info > div {
+        float: left;
+        height: 100px;
+        line-height: 100px;
+        font-size: 30px;
+        color: #333;
+    }
+
+    .yac-store-info-label {
+        width: 100px;
+        text-align: left;
+    }
+
+    .yac-store-info-value {
+        width: 480px;
+        text-align: right;
+    }
+
+    .one-line-eclipse {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<div id="times-card-detail-wrapper">
+    {{#this}}
+    {{#cover_img}}
+    <div id="times-card-cover-wrapper">
+        <img id="times-card-cover-img" src="{{raw_url}}"/>
+    </div>
+    {{/cover_img}}
+
+    <div>
+        <div class="times-card-detail-title">{{times_card_product_name}} ( {{times_card_amount}}次 )</div>
+        <div class="times-card-detail-title"><span>¥</span>{{total_price}}</div>
+    </div>
+    <hr class="yac-page-hr">
+    <div id="yac-store-info">
+        <div class="yac-store-info-label">服务商</div>
+        <div class="yac-store-info-value one-line-eclipse">{{supplier_name}}</div>
+    </div>
+    {{/this}}
+</div>

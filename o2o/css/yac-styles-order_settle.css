@@ -1,0 +1,144 @@
+.selectable > .right.img {
+    width: 50px;
+    height: 100px;
+}
+
+ul.operations .left.text + .left.input {
+    margin-left: 20px;
+}
+
+ul.operations .left.text + .left.text {
+    margin-left: 40px;
+}
+
+ul.operations .left.img + .left.text {
+    margin-left: 20px;
+}
+
+ul.operations .right.img + .right.text {
+    margin-right: 20px;
+}
+
+ul.operations > li.line > .input > input {
+    width: 610px;
+}
+
+#address .value {
+    max-width: 530px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#pick_time .value {
+    max-width: 436px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#coupon .value {
+    text-align: right;
+    max-width: 466px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#payment {
+    margin-bottom: 110px;
+}
+
+#order_settle_footer {
+    position: fixed;
+    bottom: 0;
+    width: 750px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#order_settle_footer > * {
+    display: block;
+    float: left;
+}
+
+#order_settle_footer .price {
+    margin-left: 20px;
+}
+
+#order_settle_footer .vertical-line {
+    height: 50px;
+    margin: 20px 20px;
+    border-left: solid 1px #afafaf;
+}
+
+#order_settle_footer .price, #order_settle_footer .price span {
+    font-size: 48px;
+    color: #ffffff;
+    line-height: 90px;
+}
+
+#order_settle_footer .coupon, #order_settle_footer .coupon span {
+    font-size: 24px;
+    color: #a0a0a0;
+    line-height: 90px;
+}
+
+#order_settle_footer .submit {
+    float: right;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 20px;
+    font-size: 36px;
+    color: #ffffff;
+    background-color: #ff6600;
+}
+
+#popup > #picker {
+    position: fixed;
+    z-index: 1000;
+    width: 750px;
+    height: 300px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+
+.picker-wrapper {
+    width: 375px;
+    height: 300px;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.picker-wrapper + .picker-wrapper {
+    border-left: solid 1px #dddddd;
+}
+
+.swiper-slide {
+    height: 74px;
+    overflow: hidden;
+}
+
+.swiper-slide + .swiper-slide {
+    border-top: solid 1px #f0f0f0;
+}
+
+.swiper-slide > .text {
+    margin: 7px 2.7%;
+    line-height: 60px;
+    font-size: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.swiper-slide.selected > .text {
+    color: #ffffff;
+    background-color: #38c87c;
+}
+
+.swiper-slide:not(.selected) > .text {
+    color: #aaaaaa;
+    background-color: #ffffff;
+}

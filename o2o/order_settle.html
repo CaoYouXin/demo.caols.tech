@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=750, user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>确认订单</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/yac-styles.css">
+    <link rel="stylesheet" href="./css/yac-operations.css">
+    <link rel="stylesheet" href="./css/yac-modal.css">
+    <link rel="stylesheet" href="css/yac-styles-order_settle.css">
+
+    <style>
+        body {
+            padding-bottom: 100px;
+        }
+
+        #order_settle_footer {
+            top: calc(480px / 0.43 - 90px);
+        }
+    </style>
+</head>
+<body style="background-color: #f1f1f1;">
+<script src="../js/mobile-util.js"></script>
+
+<ul id="service_types" class="operations">
+    <li class="line selectable invisible" data-key="keeper">
+        <div class="left text"></div>
+        <div class="right img"></div>
+    </li>
+    <li class="line selectable invisible" data-key="self">
+        <div class="left text"></div>
+        <div class="right img"></div>
+    </li>
+</ul>
+
+<ul id="baseinfo" class="operations">
+    <li id="contact_name" class="line">
+        <div class="left text">姓名</div>
+        <div class="left input">
+            <input type="text" data-reg-msg="请输入姓名" placeholder="请输入姓名…"/>
+        </div>
+    </li>
+    <li id="phone_number" class="line">
+        <div class="left text">手机</div>
+        <div class="left input">
+            <input type="tel" data-reg="\d{11}" data-reg-msg="请输入正确手机号" placeholder="请输入电话…"/>
+        </div>
+    </li>
+    <li id="address" class="line">
+        <div class="left text">地址</div>
+        <div class="left text value" data-reg-msg="请选择地址"></div>
+        <div class="right img"><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/dingwei.png" width="40px" height="40px"/></div>
+    </li>
+    <li id="pick_time" class="line">
+        <div class="left img"><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/clock.png" width="40px" height="40px"/></div>
+        <div class="left text">预约时间</div>
+        <div class="left text value" data-reg-msg="请选择预约时间"></div>
+        <div class="right img"><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/right_arrow.png" width="14px" height="25px"/></div>
+    </li>
+    <li id="coupon" class="line">
+        <div class="left img"><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/quan.png" width="40px" height="40px"/></div>
+        <div class="left text">代金券</div>
+        <div class="right img"><img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/right_arrow.png" width="14px" height="25px"/></div>
+        <div class="right red text value"></div>
+    </li>
+    <li id="comment" class="line">
+        <div class="left text">备注</div>
+        <div class="left input">
+            <input type="text" data-reg=".*" placeholder="无则留空…"/>
+        </div>
+    </li>
+</ul>
+
+<ul id="payment" class="operations">
+    <li class="line selectable invisible" data-pay-mode="1" data-pay-way="wx">
+        <div class="left img">
+            <img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/weixin.png" width="60px" height="60px"/>
+        </div>
+        <div class="left text">微信支付</div>
+        <div class="right img"></div>
+    </li>
+    <li class="line selectable invisible" data-pay-mode="1" data-pay-way="alipay">
+        <div class="left img">
+            <img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/zhifubao.png" width="60px" height="60px"/>
+        </div>
+        <div class="left text">支付宝支付</div>
+        <div class="right img"></div>
+    </li>
+    <li class="line selectable invisible" data-pay-mode="2" data-pay-way="sqbj">
+        <div class="left img">
+            <img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/fuwu.png" width="60px" height="60px"/>
+        </div>
+        <div class="left text">社区半径支付</div>
+        <div class="right img"></div>
+    </li>
+    <li class="line selectable invisible" data-pay-mode="2" data-pay-way="fuwu">
+        <div class="left img">
+            <img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/fuwu.png" width="60px" height="60px"/>
+        </div>
+        <div class="left text">服务后支付</div>
+        <div class="right img"></div>
+    </li>
+</ul>
+
+<footer id="order_settle_footer">
+    <div class="price">
+        ¥<span class="value"></span>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="coupon">
+        订单优惠<span class="value"></span>元
+    </div>
+    <div class="submit" id="submit_button">
+        立即结算
+    </div>
+</footer>
+
+<div id="popup" style="display: none;">
+    <div class="cover"></div>
+    <div id="picker">
+        <div id="day" class="picker-wrapper swiper-container-day">
+            <div class="swiper-wrapper">
+            </div>
+        </div>
+        <div id="time" class="picker-wrapper swiper-container-time">
+            <div class="swiper-wrapper">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=WVAXZ05oyNRXS5egLImmentg"></script>
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/pingxx/pingpp_pay.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+
+</body>
+</html>

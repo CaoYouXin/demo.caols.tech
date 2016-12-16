@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>养爱车活动</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/yac-modal.css">
+
+</head>
+<body>
+<script src="../js/mobile-util.js"></script>
+
+<!--<script type="text/x-handlebars-template" id="test_share_picks">-->
+    <!--<div style="width: 640px; background: url('./img/coupon_share_list_bg.png') 50% repeat-y;">-->
+        <!--<ul style="list-style-type: none; padding: 0; margin-left: 51px;">-->
+            <!--{{~ it.data : value : index}}-->
+            <!--<li class="share_list_item" style="width: 538px; height: 145px; background: #fffcd6;">-->
+                <!--<div style="float: left; width: 100px; height: 145px; line-height: 145px; text-align: center;">-->
+                    <!--<img style="width: 90px; height: 90px;" src="{{=value.wechat_user_info.headimgurl}}">-->
+                <!--</div>-->
+                <!--<div style="float: left; width: 332px; height: 145px; padding-top: 23px;">-->
+                <!--<span style="-->
+                <!--display: block;-->
+                <!--float: left;-->
+                <!--width: 90px;-->
+                <!--line-height: 50px;-->
+                <!--font-size: 30px;-->
+                <!--overflow: hidden;-->
+                <!--white-space: nowrap;-->
+                <!--text-overflow: ellipsis;">{{=value.wechat_user_info.nickname}}</span>-->
+                <!--<span style="-->
+                <!--display: block;-->
+                <!--float: left;-->
+                <!--margin-left: 20px;-->
+                <!--width: 220px;-->
+                <!--line-height: 50px;-->
+                <!--font-size: 20px;-->
+                <!--overflow: hidden;-->
+                <!--white-space: nowrap;-->
+                <!--text-overflow: ellipsis;">{{=value.create_time}}</span>-->
+                    <!--<br/>-->
+                <!--<span style="-->
+                <!--display: inline-block;-->
+                <!--width: 330px;-->
+                <!--line-height: 50px;-->
+                <!--font-size: 26px;-->
+                <!--overflow: hidden;-->
+                <!--white-space: nowrap;-->
+                <!--text-overflow: ellipsis;">红包的颜值和你的一样高哦</span>-->
+                <!--</div>-->
+                <!--<div style="float: left; width: 106px; height: 145px; line-height: 145px; text-align: right; font-size: 34px; color: #ed7671;">-->
+                    <!--69元-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--{{~}}-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<style>-->
+        <!--.share_list_item + .share_list_item {-->
+            <!--border-top: 1px solid #d6d3b5;-->
+        <!--}-->
+    <!--</style>-->
+<!--</script>-->
+
+<div id="coupon_share_list"></div>
+
+<script type="text/x-handlebars-template" id="coupon_share_list_tpl">
+    <div style="width: 640px; background: url('http://7xiqe8.com2.z0.glb.qiniucdn.com/coupon_share_list_bg.png') 50% 50% repeat-y;">
+        <ul style="list-style-type: none; padding: 0; margin: 0 0 0 51px;">
+            {{#each data}}
+            <li class="share_list_item" style="width: 538px; height: 145px; background: #fffcd6;">
+                <div style="float: left; width: 100px; height: 145px; line-height: 145px; text-align: center;">
+                    <img style="width: 90px; height: 90px;" src="{{wechat_user_info.headimgurl}}">
+                </div>
+                <div style="float: left; width: 332px; height: 145px; padding-top: 23px;">
+                <span style="
+                display: block;
+                float: left;
+                width: 90px;
+                line-height: 50px;
+                font-size: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;">{{wechat_user_info.nickname}}</span>
+                <span style="
+                display: block;
+                float: left;
+                margin-left: 20px;
+                width: 220px;
+                line-height: 50px;
+                font-size: 20px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;">{{create_time}}</span>
+                <br/>
+                <span style="
+                display: inline-block;
+                width: 330px;
+                line-height: 50px;
+                font-size: 26px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;">{{phrase}}</span>
+                </div>
+                <div style="float: left; width: 106px; height: 145px; line-height: 145px; text-align: right; font-size: 34px; color: #ed7671;">
+                    {{coupon.value}}元
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div style="width: 640px; height: 18px; background: url('http://7xiqe8.com2.z0.glb.qiniucdn.com/bg_bottom_coupon_share_list.png');"></div>
+    <style>
+        .share_list_item + .share_list_item {
+            border-top: 1px solid #d6d3b5;
+        }
+    </style>
+</script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars-v4.0.5.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+
+</body>
+</html>

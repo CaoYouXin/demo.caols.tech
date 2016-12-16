@@ -1,0 +1,93 @@
+<style>
+    .times_card_products {
+        list-style-type: none;
+    }
+
+    .times_card_products li {
+        display: block;
+        width: 375px;
+        height: 293px;
+        float: left;
+    }
+
+    .times_card_products > .odd {
+        padding: 20px 15px 0 30px;
+    }
+
+    .times_card_products > .even {
+        padding: 20px 30px 0 15px;
+    }
+
+    .times_card_products li > div {
+        display: block;
+        width: 330px;
+        height: 273px;
+        background: #FFF;
+    }
+
+    .times_card_products .home-page-products-image {
+        width: 330px;
+        height: 185px;
+        overflow: hidden;
+        line-height: 185px;
+        text-align: center;
+    }
+
+    .times_card_products .home-page-products-title {
+        width: 330px;
+        height: 40px;
+        color: #333;
+        font-size: 28px;
+        padding-left: 10px;
+    }
+
+    .times_card_products .home-page-products-price {
+        width: 330px;
+        height: 48px;
+    }
+
+    .times_card_products .home-page-products-price div {
+        float: left;
+        display: block;
+        height: 48px;
+        line-height: 48px;
+    }
+
+    .times_card_products .home-page-products-price div:first-child {
+        color: #FF6600;
+        font-size: 28px;
+        margin: 0 10px;
+    }
+
+    .times_card_products .home-page-products-price div:last-child {
+        color: #999;
+        font-size: 18px;
+        text-decoration: line-through;
+    }
+</style>
+
+{{#this}}
+{{#yac}}
+<div class="am-vertical-align products-title">
+    <img class="am-vertical-align-middle" src="http://7xiqe8.com2.z0.glb.qiniucdn.com/vline.png"/>
+    <span class="am-vertical-align-middle">附近的次卡商品</span>
+</div>
+
+<ul class="times_card_products">
+    {{#each array}}
+    <li class="{{odd_or_even}}" data-rel="{{times_card_product_id}}">
+        <div>
+            {{#cover_img}}
+            <div class="home-page-products-image"><img src="{{raw_url}}?imageView2/0/w/330/h/185/interlace/1"/></div>
+            {{/cover_img}}
+            <div class="home-page-products-title auto-font-size-yac" font-size-limit="280">{{times_card_product_name}}（{{times_card_amount}}次）</div>
+            <div class="home-page-products-price">
+                <div>¥{{total_price}}</div>
+                <div></div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+{{/yac}}
+{{/this}}

@@ -1,0 +1,51 @@
+ul.shequbanjing-list > li {
+    width: 710px;
+    height: 300px;
+    margin: 0 20px;
+    background: no-repeat center;
+    background-size: cover;
+    background-clip: border-box;
+    overflow: hidden;
+}
+
+ul.shequbanjing-list > li:before {
+    display: block;
+    float: left;
+    width: 0;
+    height: 254px;
+    content: 'sth';
+    overflow: hidden;
+}
+
+ul.shequbanjing-list > li + li {
+    margin-top: 20px;
+}
+
+ul.shequbanjing-list > li > .top-right {
+    float: right;
+    min-width: 100px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ff8c41;
+}
+
+ul.shequbanjing-list > li > .top-right > span.dollar-sign {
+    font-size: 18px;
+}
+
+ul.shequbanjing-list > li > .top-right > span:not(.dollar-sign) {
+    font-size: 28px;
+}
+
+ul.shequbanjing-list > li > .bottom {
+    clear: both;
+    width: 100%;
+    height: 46px;
+    padding: 0 20px;
+    font-size: 32px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+}

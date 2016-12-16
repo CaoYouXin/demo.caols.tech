@@ -1,0 +1,98 @@
+ul.operations {
+    width: 750px;
+    background-color: #ffffff;
+    border-top: solid 1px #e0e0e0;
+    border-bottom: solid 1px #e0e0e0;
+}
+
+ul.operations.invisible {
+    display: none;
+}
+
+ul.operations:not(.invisible) + ul.operations {
+    margin-top: 20px;
+}
+
+ul.operations > li.line {
+    width: 720px;
+    background-color: #ffffff;
+    margin-left: 30px;
+    padding-right: 30px;
+    height: 100px;
+}
+
+ul.operations > li.line + li.line {
+    border-top: solid 1px #e0e0e0;
+}
+
+ul.operations.one-child > li.line + li.line {
+    border-top: none;
+}
+
+ul.operations > li.line:first-child.invisible + li.line {
+    border-top: none;
+}
+
+ul.operations > li.line > * {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+}
+
+ul.operations > li.line > *[class*='left'] {
+    float: left;
+}
+
+ul.operations > li.line > *[class*='right'] {
+    float: right;
+}
+
+ul.operations > li.line > .text {
+    font-size: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+ul.operations > li.line > .img {
+    font-size: 0;
+}
+
+ul.operations > li.line > .img > img {
+    vertical-align: middle;
+}
+
+ul.operations > li.line > .input > input {
+    height: 90px;
+    padding: 20px;
+    font-size: 30px;
+    line-height: 59px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+ul.operations > li.line > .text.green {
+    color: #38c87c;
+}
+
+ul.operations > li.line > .text.red {
+    color: #ff6600;
+}
+
+ul.operations > li.line > .text.btn {
+    text-align: center;
+    color: #09be00;
+    cursor: pointer;
+}
+
+.selectable.selected > .right.img {
+    background: url('http://7xiqe8.com2.z0.glb.qiniucdn.com/checked.png') no-repeat 50% 50%;
+}
+
+.selectable:not(.selected) > .right.img {
+    background: url('http://7xiqe8.com2.z0.glb.qiniucdn.com/unchecked.png') no-repeat 50% 50%;
+}
+
+ul.operations > li.line.invisible {
+    display: none;
+}

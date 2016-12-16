@@ -36,6 +36,7 @@ window.mobileUtil = (function (win, doc) {
         tapEvent: isMobile ? 'tap' : 'click',
 
         winWidth: null,
+        bodyScale: null,
 
         /**
          * 缩放页面
@@ -52,7 +53,7 @@ window.mobileUtil = (function (win, doc) {
                 }
                 data[kv[0]] = kv[1];
             }
-            this.winWidth = data.width = parseInt(data.width) || 800;
+            this.winWidth = data.width = parseInt(data.width) || 640;
 
             // if (isMobile) { // 定宽
             //     if (isAndroid) {
@@ -68,7 +69,7 @@ window.mobileUtil = (function (win, doc) {
 
                     data['initial-scale'] = data['maximum-scale'] = data['minimum-scale'] = scale;
 
-                    document.body.style.zoom = scale;
+                    this.bodyScale = document.body.style.zoom = scale;
                 // }
 
                 metaEl.content = JSON.stringify(data).replace(/\s*/g, '').replace(/[{}"]/g, '').replace(/:/g, '=');

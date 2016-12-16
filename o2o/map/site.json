@@ -1,0 +1,39 @@
+{
+  "browser": [
+    {
+      "type": "h5_hybrid",
+      "userAgent": "yangaiche",
+      "moduleRoot": "yangaiche"
+    },
+    {
+      "type": "weixin",
+      "userAgent": "micromessenger",
+      "moduleRoot": "weixin"
+    },
+    {
+      "type": "alipay",
+      "userAgent": "alipayclient",
+      "moduleRoot": "alipay"
+    },
+    {
+      "type": "xiaomi",
+      "userAgent": "miuiyellowpage",
+      "moduleRoot": "xiaomi"
+    },
+    {
+      "type": "shequbanjing",
+      "userAgent": "shequbanjing",
+      "moduleRoot": "shequbanjing"
+    },
+    {
+      "type": "research",
+      "userAgent": "research",
+      "moduleRoot": "research"
+    },
+    {
+      "type": "normal",
+      "userAgent": "",
+      "moduleRoot": "normal"
+    }
+  ]
+}

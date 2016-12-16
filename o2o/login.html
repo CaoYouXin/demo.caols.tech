@@ -1,0 +1,60 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>用户登录</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+
+</head>
+<body style="background: #ffffff;">
+<script src="../js/mobile-util.js"></script>
+
+<div class="login-div">
+    <p class="am-form-help login-help" id="msg"></p>
+
+    <div class="login-item-content">
+        <div class="am-g">
+            <div class="am-u-sm-7">
+                <input type="tel" class="am-form-field" name="phone" id="phone" placeholder="请输入手机号">
+                <hr data-am-widget="divider" class="am-divider am-divider-default hr-pd"/>
+            </div>
+            <div class="am-u-sm-5">
+                <button type="button" id="verify_button" class="am-btn am-btn-success am-btn-block new-bottom-button">
+                    获取验证码
+                </button>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <input type="tel" class="am-form-field" name="verify_code" id="verify_code" placeholder="请输入验证码">
+                <hr data-am-widget="divider" class="am-divider am-divider-default hr-pd"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="normal-bottom-btn-div">
+        <button type="button" id="login_button" class="am-btn am-btn-success am-btn-block new-bottom-button">登录</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

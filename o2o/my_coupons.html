@@ -1,0 +1,72 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的优惠劵</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./3rdLibs/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+
+</head>
+<body class="body-background-color-gray">
+<script src="../js/mobile-util.js"></script>
+<div class="am-g transparent-top-fixed-div">
+    <div class="am-u-sm-8 coupons-top-div am-vertical-align">
+        <input type="text" id="coupon_number" class="my-coupons-rounded-input am-form-field am-vertical-align-middle"
+               placeholder="输入兑换码"/>
+    </div>
+    <div class="am-u-sm-4 coupons-top-div am-vertical-align">
+        <button id="coupon_convert"
+                class="am-btn am-btn-success am-btn-block new-bottom-button am-vertical-align-middle">兑换
+        </button>
+    </div>
+</div>
+<div id="coupons"></div>
+<script type="text/x-handlebars-template" id="coupons_list_tpl">
+    <ul class="am-list coupon-manager-list" style="margin-top: 150px;margin-bottom:30px;">
+        {{#each this}}
+        <li class="coupon-btn am-nbfc coupon-manager-line"
+            style="border: none;background-color: transparent;"
+            data-name="{{name}}" data-id="{{id}}" data-used="{{used}}" data-value="{{value}}"
+            data-type="{{coupon_type}}">
+            <img src="{{bg_img}}" style="width: 100%;height: 159px;position:absolute;z-index: -1;">
+
+            <div class="coupon-number">号码: {{number}}</div>
+            <div class="coupon-name">{{coupon_type_value}}</div>
+            {{#showvalue}}
+            <div class="coupon-value">¥{{value}}</div>
+            {{/showvalue}}
+
+            <div class="coupon-status">{{status}}</div>
+            <div class="coupon-expire-label">有效时间</div>
+            <div class="coupon-expire">{{expired_time}}止</div>
+
+            {{#selected}}
+            <img class="coupon-selected" src="./img/hook.png"></img>
+            {{/selected}}
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

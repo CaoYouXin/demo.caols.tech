@@ -1,0 +1,59 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的地址</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./3rdLibs/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+</head>
+<body class="body-background-color-gray">
+<script src="../js/mobile-util.js"></script>
+<script type="text/x-handlebars-template" id="address_list_tpl">
+    <ul class="address-list" style="margin-top:30px;">
+        {{#each this}}
+        <li class="address am-nbfc address-manager-line" data-rel="{{id}}">
+            <div class="address-btn address-manager-clickable"
+                 data-id="{{id}}" data-longitude="{{longitude}}" data-latitude="{{latitude}}">
+                <div class="address-manager-clickable-text">
+                    {{name}}
+                </div>
+                <div class="address-manager-clickable-img">
+                    <img src="http://7xiqe8.com2.z0.glb.qiniucdn.com/pen.png" alt="pen">
+                </div>
+                <div class="address-manager-clickable-subtext">
+                    {{address}}
+                </div>
+            </div>
+            <div class="delete-btn am-vertical-align address-manager-deletable" data-rel="{{id}}">
+                <img class="am-vertical-align-middle address-manager-deletable-img" src="./img/delete.png">
+            </div>
+        </li>
+        {{/each}}
+        <li class="add-address-btn am-nbfc address-manager-line">
+            添加一个地址
+        </li>
+    </ul>
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

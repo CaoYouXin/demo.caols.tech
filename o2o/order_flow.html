@@ -1,0 +1,86 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单流程</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+</head>
+<body class="body-background-color-white">
+<script src="../js/mobile-util.js"></script>
+<div class="am-g my-simple-2-divide-header">
+    <div class="am-u-sm-6 my-simple-2-divide-header-half my-header-selected" id="order_flow_btn">
+        养车进度
+    </div>
+    <div class="am-u-sm-6 my-simple-2-divide-header-half my-header-not-selected" id="car_tracks_btn">
+        爱车位置
+    </div>
+</div>
+<div id="order_flow" style="display: block;"></div>
+<div id="car_tracks" style="display: none;">
+    <div id="map_view" class="order-flow-map-view">
+    </div>
+    <!--<button id="run" class="am-btn am-btn-success new-bottom-button" style="width: 100%;">点击观看地理位置信息-->
+    <!--</button>-->
+</div>
+<script type="text/x-handlebars-template" id="order_flow_tpl">
+    <ul class="am-list margin-top-40">
+        {{#each this}}
+        <li class="am-nbfc" style="border: 0 none;">
+            <div class="am-fl left order-flow-box margin-left-30">
+                <div class="text-align-right">
+                    <span class="order-flow-time-text">{{time}}</span>
+                    <br>
+                    <span class="order-flow-date-text">{{date}}</span>
+                </div>
+            </div>
+            <div class="am-fl center order-flow-box">
+                <div class="line{{up_line_color}}" data-display="{{show_up_line}}"></div>
+                <div class="oval{{oval_type}}"></div>
+                <div class="line down-line{{down_line_color}}" data-display="{{show_down_line}}"></div>
+            </div>
+            <div class="am-fl right order-flow-box">
+                <div class="{{name_color}} order-flow-name-text">
+                    {{name}}
+                </div>
+                <div data-am-widget="gallery" class="am-gallery am-gallery-default am-cf my-gallery"
+                     data-am-gallery="{ pureview: true }">
+                    {{#each items}}
+                        {{#each pics}}
+                        <a class="am-fl am-gallery-item order-flow-gallery-item">
+                            <img src="{{thumbnail_url}}" class="gallery-img" style="height: 80px;width: 80px;"
+                                 data-rel="{{original_url}}"/>
+                        </a>
+                        {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.widgets.helper.min.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=WVAXZ05oyNRXS5egLImmentg"></script>
+<script type="text/javascript" src="./3rdLibs/js/baiduMap/LuShu_min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/baiduMap/MarkerManager_min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

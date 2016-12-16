@@ -1,0 +1,31 @@
+ul.good-suggest {
+    width: 750px;
+    border-top: solid 1px #e0e0e0;
+    border-bottom: solid 1px #e0e0e0;
+}
+
+ul.good-suggest > li {
+    background-size: cover;
+    background: #ffffff no-repeat center;
+}
+
+ul.good-suggest > li:first-child {
+    width: 50%;
+    height: 336px;
+    float: left;
+    border-right: solid 1px #e0e0e0;
+}
+
+ul.good-suggest > li:not(:first-child) {
+    float: right;
+    width: 50%;
+    height: 168px;
+}
+
+ul.good-suggest > li:not(:first-child) + li {
+    border-top: solid 1px #e0e0e0;
+}
+
+ul.good-suggest > li:nth-child(n + 4) + li {
+    border-right: solid 1px #e0e0e0;
+}

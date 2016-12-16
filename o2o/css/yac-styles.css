@@ -1,0 +1,21 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-weight: lighter;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    width: 750px;
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+}

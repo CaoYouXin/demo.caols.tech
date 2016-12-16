@@ -1,0 +1,58 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的检测报告单</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+	<link rel="stylesheet" href="./css/yac-modal.css">
+</head>
+<body class="body-background-color-gray">
+<script src="../js/mobile-util.js"></script>
+<script type="text/x-handlebars-template" id="exam_reports_tpl">
+    <ul class="am-list">
+        {{#each this}}
+        <li class="am-nbfc report-btn exam-reports-line" data-rel="{{id}}">
+            <div class="am-fl left exam-reports-left-box">
+                <div class="exam-reports-left-line-1">
+                    {{create_time}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {{name}}
+                </div>
+                {{# car}}
+                <div class="exam-reports-left-line-2">
+                    {{brand}}
+                    &nbsp;&nbsp;
+                    {{category}}
+                    &nbsp;&nbsp;
+                    {{model}}
+                </div>
+                {{/car}}
+            </div>
+            <div class="am-fl right am-vertical-align exam-reports-right-box" style="">
+                <img src="./img/right_arrow.png" alt=">" class="am-vertical-align-middle">
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>

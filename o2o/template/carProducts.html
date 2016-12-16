@@ -1,0 +1,43 @@
+<ul class="am-list my-product-list">
+    {{#each products}}
+    <li class="my-product-line">
+        <div class="my-product-line-content-label">{{{part_name}}}</div>
+        <div class="my-product-line-content">
+            <div class="swiper-container">
+                <!-- Add Scrollbar -->
+                <div class="swiper-scrollbar"></div>
+                <div class="swiper-wrapper my-btn-group" data-rel="">
+                    <div class="swiper-slide clear-pm am-nbfc">
+                        {{#each products}}
+                        <button class="my-product-line-content-button am-fl" data-rel="{{product_type}}">
+                            {{{product_name}}}
+                        </button>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    <!--<li id="community_only" class="my-product-line">-->
+        <!--<div class="body-background-color-gray my-product-line am-vertical-align">-->
+            <!--<div class="my-product-line-content-label am-vertical-align-middle">接车方式</div>-->
+            <!--<div class="swiper-container am-vertical-align-middle">-->
+                <!--&lt;!&ndash; Add Scrollbar &ndash;&gt;-->
+                <!--<div class="swiper-scrollbar"></div>-->
+                <!--<div class="swiper-wrapper my-btn-group" must-select-one="1" data-key="{{service_key}}" data-rel="{{keeper_type}}">-->
+                    <!--<div class="swiper-slide clear-pm am-nbfc">-->
+                        <!--<button class="my-product-line-content-button am-fl" data-key="{{service_key}}" data-rel="{{keeper_type}}">-->
+                            <!--管家接车-->
+                        <!--</button>-->
+                        <!--{{#can_self}}-->
+                        <!--<button class="my-product-line-content-button am-fl" data-key="{{service_key}}" data-rel="{{self_type}}">-->
+                            <!--自驾到店-->
+                        <!--</button>-->
+                        <!--{{/can_self}}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</li>-->
+</ul>

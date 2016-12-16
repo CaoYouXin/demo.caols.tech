@@ -1,0 +1,65 @@
+<!doctype html><!--[if lte IE 9]>
+<html class="lte9 no-js m"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js m"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content=" user-scalable=no">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <title>商品评价</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./3rdLibs/css/amazeui/amazeui.min.css">
+    <link rel="stylesheet" href="./css/h5.css">
+    <link rel="stylesheet" href="./css/yac-modal.css">
+
+    <link rel="dns-prefetch" href="http://baseimg.yangaiche.com/">
+</head>
+<body class="body-background-color-gray">
+<script src="../js/mobile-util.js"></script>
+
+<div id="store-item-comments"><ul></ul></div>
+
+<script type="text/x-handlebars-template" id="comments_list_tpl">
+    {{#each this}}
+    <li>
+        <hr>
+        <div>
+            <div class="comment-corner comment-user">{{comment_user_name}}</div>
+            <div class="comment-corner comment-time">{{create_time}}</div>
+        </div>
+        <p>{{comment_text}}</p>
+
+        <div>
+            <div class="comment-corner comment-service am-vertical-align">
+                <img class="am-vertical-align-middle" src="./img/store_car.png"/>
+                <span class="am-vertical-align-middle">服务:</span>
+                {{#each order_rating}}
+                <img class="am-vertical-align-middle" src="./img/star.png"/>
+                {{/each}}
+            </div>
+            <div class="comment-corner comment-keeper am-vertical-align">
+                <img class="am-vertical-align-middle" src="./img/store_keeper.png"/>
+                <span class="am-vertical-align-middle">管家:</span>
+                {{#each keeper_rating}}
+                <img class="am-vertical-align-middle" src="./img/star.png"/>
+                {{/each}}
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<script type="text/javascript" src="./3rdLibs/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./3rdLibs/js/amazeui/amazeui.min.js"></script>
+<script type="text/javascript" src="./js/lib/yangaiche.js"></script>
+
+</body>
+</html>
