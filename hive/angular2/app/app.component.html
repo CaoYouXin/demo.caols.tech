@@ -1,0 +1,16 @@
+<h1>Hive</h1>
+<nav>
+    <div class="nav" (click)="awesome($event)" routerLink="/dashboard" routerLinkActive="active"><a>Dashboard</a><br>
+        <div class="container">
+            <div class="radius"></div>
+        </div>
+    </div>
+    <div class="nav" (click)="awesome($event)" routerLink="/heroes" routerLinkActive="active"><a>Heroes</a><br>
+        <div class="container">
+            <div class="radius"></div>
+        </div>
+    </div>
+</nav>
+<div class="view">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,89 @@
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    padding: 0 1em;
+    margin: 0;
+
+    line-height: 1.5em;
+    background-color: #F5F6EB;
+}
+
+h1:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: calc(100% - 1.5em);
+
+    position: fixed;
+    left: 0;
+
+    background: transparent;
+
+    pointer-events: none;
+    box-shadow: 0 0 4px 5px #34352C;
+}
+
+nav {
+    display: block;
+
+    width: 20%;
+    float: left;
+}
+
+nav > .nav {
+    display: block;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    background-color: #EFF0DC;
+
+    padding: 0;
+
+    overflow: hidden;
+}
+
+nav > .nav > a {
+    color: #34352C;
+    text-decoration: none;
+}
+
+nav > .nav > .container {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    bottom: 100%;
+}
+
+nav > .nav > .container > .radius {
+    display: inline-block;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: relative;
+
+    transform: scale(0);
+    transform-origin: 50% 50% 0;
+    transition: transform .9s ease-in-out;
+}
+
+nav > .nav > .container > .radius.animated {
+    transform: scale(1);
+}
+
+nav > .nav:hover {
+    box-shadow: inset 0 0 5px blue;
+}
+
+.view {
+    width: 80%;
+    float: right;
+}
