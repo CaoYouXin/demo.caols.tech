@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var dashboard_component_1 = require("./dashboard.component");
-var routes = [
+exports.routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent }
 ];
@@ -22,7 +22,7 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(routes)],
+        imports: [router_1.RouterModule.forRoot(exports.routes)],
         exports: [router_1.RouterModule]
     }),
     __metadata("design:paramtypes", [])

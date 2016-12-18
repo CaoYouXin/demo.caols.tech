@@ -1,0 +1,59 @@
+.nav {
+    display: block;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    background-color: #EFF0DC;
+
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.nav > a {
+    color: #34352C;
+    text-decoration: none;
+}
+
+.nav > .container {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    bottom: 100%;
+
+    overflow: hidden;
+}
+
+.nav > .container:not(.show) > .radius {
+    display: none;
+}
+
+.nav > .container > .radius {
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background-color: rgba(0, 0, 100, 0.3);
+
+    position: relative;
+
+    transform: scale(0);
+    transform-origin: 50% 50% 0;
+    transition: transform .3s ease-in-out;
+}
+
+.nav > .container > .radius.animated {
+    transform: scale(1);
+}
+
+.nav:hover {
+    box-shadow: inset 0 0 5px #EFF0DC;
+}

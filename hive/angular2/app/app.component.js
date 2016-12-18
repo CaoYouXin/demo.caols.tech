@@ -9,21 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var app_routing_module_1 = require("./app-routing.module");
 var AppComponent = (function () {
     function AppComponent() {
+        this.routes = app_routing_module_1.routes.slice(1);
     }
-    AppComponent.prototype.awesome = function (e) {
-        var v1 = e.offsetX * e.offsetX;
-        var v2 = (e.target['offsetHeight'] - e.offsetY) * (e.target['offsetHeight'] - e.offsetY);
-        var v3 = (e.target['offsetWidth'] - e.offsetX) * (e.target['offsetWidth'] - e.offsetX);
-        var v4 = e.offsetY * e.offsetY;
-        var radius = Math.sqrt(Math.max(v1 + v4, v1 + v2, v3 + v4, v3 + v2));
-        var mask = document.createElement('div');
-        mask.classList.add('radius');
-        mask.style.width = 2 * radius + 'px';
-        mask.style.height = 2 * radius + 'px';
-        console.log(this, e.target['lastElementChild']);
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
