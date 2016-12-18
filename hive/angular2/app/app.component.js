@@ -9,28 +9,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Pane = (function () {
+    function Pane() {
+    }
+    return Pane;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], Pane.prototype, "id", void 0);
+Pane = __decorate([
+    core_1.Directive({ selector: 'pane' }),
+    __metadata("design:paramtypes", [])
+], Pane);
+exports.Pane = Pane;
+var Tab = (function () {
+    function Tab() {
+    }
+    Object.defineProperty(Tab.prototype, "serializedPanes", {
+        get: function () { return this.panes ? this.panes.map(function (p) { return p.id; }).join(', ') : ''; },
+        enumerable: true,
+        configurable: true
+    });
+    return Tab;
+}());
+__decorate([
+    core_1.ContentChildren(Pane),
+    __metadata("design:type", core_1.QueryList)
+], Tab.prototype, "panes", void 0);
+Tab = __decorate([
+    core_1.Component({
+        selector: 'tab',
+        template: "\n    <div>panes: {{serializedPanes}}</div> \n  "
+    }),
+    __metadata("design:paramtypes", [])
+], Tab);
+exports.Tab = Tab;
 var AppComponent = (function () {
     function AppComponent() {
+        this.shouldShow = false;
     }
-    AppComponent.prototype.awesome = function (e) {
-        var v1 = e.offsetX * e.offsetX;
-        var v2 = (e.target['offsetHeight'] - e.offsetY) * (e.target['offsetHeight'] - e.offsetY);
-        var v3 = (e.target['offsetWidth'] - e.offsetX) * (e.target['offsetWidth'] - e.offsetX);
-        var v4 = e.offsetY * e.offsetY;
-        var radius = Math.sqrt(Math.max(v1 + v4, v1 + v2, v3 + v4, v3 + v2));
-        var mask = document.createElement('div');
-        mask.classList.add('radius');
-        mask.style.width = 2 * radius + 'px';
-        mask.style.height = 2 * radius + 'px';
-        console.log(this, e.target['lastElementChild']);
-    };
+    AppComponent.prototype.show = function () { this.shouldShow = true; };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: 'app/app.component.html',
-        styleUrls: ['app/app.component.css']
+        template: "\n    <tab>\n      <pane id=\"1\"></pane>\n      <pane id=\"2\"></pane>\n      <pane id=\"3\" *ngIf=\"shouldShow\"></pane>\n    </tab>\n    <button (click)=\"show()\">Show 3</button>\n  ",
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
