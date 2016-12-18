@@ -4,30 +4,25 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var app_routing_component_1 = require("./app-routing.component");
 var dashboard_component_1 = require("./dashboard.component");
+var d3_component_1 = require("./d3.component");
 var testing_1 = require("@angular/core/testing");
 var platform_browser_1 = require("@angular/platform-browser");
 ////////  SPECS  /////////////
-/// Delete this
-describe('Smoke test', function () {
-    it('should run a passing test', function () {
-        expect(true).toEqual(true, 'should pass');
-    });
-});
 describe('AppComponent with TCB', function () {
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
             imports: [app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, app_routing_component_1.AppRoutingComponent, dashboard_component_1.DashboardComponent]
+            declarations: [app_component_1.AppComponent, app_routing_component_1.AppRoutingComponent, dashboard_component_1.DashboardComponent, d3_component_1.D3Component]
         }).compileComponents();
     }));
     it('should instantiate component', function () {
         var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
         expect(fixture.componentInstance instanceof app_component_1.AppComponent).toBe(true, 'should create AppComponent');
     });
-    it('route length should be 1 for now', function () {
+    it('route length should be lses then *** by 1 for now', function () {
         var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
         console.log(JSON.stringify(fixture.componentInstance.routes));
-        expect(fixture.componentInstance.routes.length).toBe(1, 'should be 1 for now');
+        expect(fixture.componentInstance.routes.length).toBe(app_routing_module_1.routes.length - 1, 'should be lses then *** by 1 for now');
     });
     it('should have expected <h1> text', function () {
         var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);

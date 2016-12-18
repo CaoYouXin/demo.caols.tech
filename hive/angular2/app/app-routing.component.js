@@ -19,7 +19,6 @@ var AppRoutingComponent = (function () {
         this.isAnimated = falsePromise;
     }
     AppRoutingComponent.prototype.awesome = function (e) {
-        this.isSelected = true;
         var v1 = e.offsetX * e.offsetX;
         var v2 = (e.target['offsetHeight'] - e.offsetY) * (e.target['offsetHeight'] - e.offsetY);
         var v3 = (e.target['offsetWidth'] - e.offsetX) * (e.target['offsetWidth'] - e.offsetX);
@@ -34,7 +33,6 @@ var AppRoutingComponent = (function () {
                 resolve(true);
             }, 100);
         });
-        console.log(this);
     };
     Object.defineProperty(AppRoutingComponent.prototype, "isSelected", {
         set: function (s) {
@@ -53,6 +51,11 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
 ], AppRoutingComponent.prototype, "r", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [Boolean])
+], AppRoutingComponent.prototype, "isSelected", null);
 AppRoutingComponent = __decorate([
     core_1.Component({
         selector: 'route',

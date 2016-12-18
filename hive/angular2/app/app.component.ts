@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
-
-import { routes as appRoutes } from './app-routing.module';
+import {Component} from "@angular/core";
+import {Routes, Route} from "@angular/router";
+import {routes as appRoutes} from "./app-routing.module";
 
 @Component({
     selector: 'my-app',
@@ -10,4 +9,9 @@ import { routes as appRoutes } from './app-routing.module';
 })
 export class AppComponent {
     routes: Routes = appRoutes.slice(1);
+    selectedRoute: Route;
+
+    clicked(r: Route) {
+        this.selectedRoute = r;
+    }
 }

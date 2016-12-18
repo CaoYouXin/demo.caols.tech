@@ -14,6 +14,9 @@ var AppComponent = (function () {
     function AppComponent() {
         this.routes = app_routing_module_1.routes.slice(1);
     }
+    AppComponent.prototype.clicked = function (r) {
+        this.selectedRoute = r;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([

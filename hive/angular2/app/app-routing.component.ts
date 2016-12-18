@@ -1,5 +1,4 @@
 import {Component, Input, Renderer} from "@angular/core";
-import {AsyncPipe} from "@angular/common";
 import {Route} from "@angular/router";
 
 const falsePromise = new Promise<boolean>((resolve, reject) => {
@@ -15,8 +14,6 @@ export class AppRoutingComponent {
     @Input()
     r: Route;
 
-    renderer: Renderer;
-
     private _isSelected: boolean = false;
     isShow: boolean = false;
     isAnimated: Promise<boolean> = falsePromise;
@@ -27,8 +24,6 @@ export class AppRoutingComponent {
     top: string;
 
     awesome(e: MouseEvent): void {
-        this.isSelected = true;
-
         let v1 = e.offsetX * e.offsetX;
         let v2 = (e.target['offsetHeight'] - e.offsetY) * (e.target['offsetHeight'] - e.offsetY);
         let v3 = (e.target['offsetWidth'] - e.offsetX) * (e.target['offsetWidth'] - e.offsetX);
@@ -45,10 +40,9 @@ export class AppRoutingComponent {
                 resolve(true);
             }, 100);
         });
-
-        console.log(this);
     }
 
+    @Input()
     set isSelected(s: boolean) {
         this._isSelected = s;
         if (!s) {

@@ -1,25 +1,19 @@
 /* tslint:disable:no-unused-variable */
-import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule, routes} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {AppRoutingComponent} from "./app-routing.component";
 import {DashboardComponent} from "./dashboard.component";
+import {D3Component} from "./d3.component";
 import {TestBed, async} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
 
 ////////  SPECS  /////////////
 
-/// Delete this
-describe('Smoke test', () => {
-    it('should run a passing test', () => {
-        expect(true).toEqual(true, 'should pass');
-    });
-});
-
 describe('AppComponent with TCB', function () {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule],
-            declarations: [AppComponent, AppRoutingComponent, DashboardComponent]
+            declarations: [AppComponent, AppRoutingComponent, DashboardComponent, D3Component]
         }).compileComponents();
     }));
 
@@ -28,12 +22,12 @@ describe('AppComponent with TCB', function () {
         expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
     });
 
-    it('route length should be 1 for now', () => {
+    it('route length should be lses then *** by 1 for now', () => {
         let fixture = TestBed.createComponent(AppComponent);
 
         console.log(JSON.stringify(fixture.componentInstance.routes));
 
-        expect(fixture.componentInstance.routes.length).toBe(1, 'should be 1 for now');
+        expect(fixture.componentInstance.routes.length).toBe(routes.length - 1, 'should be lses then *** by 1 for now');
     });
 
     it('should have expected <h1> text', () => {

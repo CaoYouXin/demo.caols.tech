@@ -9,25 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var dashboard_component_1 = require("./dashboard.component");
-var d3_component_1 = require("./d3.component");
-exports.routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent, data: 'Dashboard' },
-    { path: 'd3', component: d3_component_1.D3Component, data: 'D3' },
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var D3Component = (function () {
+    function D3Component() {
     }
-    return AppRoutingModule;
+    return D3Component;
 }());
-AppRoutingModule = __decorate([
-    core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(exports.routes)],
-        exports: [router_1.RouterModule]
+D3Component = __decorate([
+    core_1.Component({
+        selector: 'welcome',
+        template: '<div class="welcome">A Low Ha</div>'
     }),
     __metadata("design:paramtypes", [])
-], AppRoutingModule);
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+], D3Component);
+exports.D3Component = D3Component;
+//# sourceMappingURL=d3.component.js.map
