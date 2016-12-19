@@ -14,7 +14,8 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var app_routing_component_1 = require("./app-routing.component");
 var dashboard_component_1 = require("./dashboard.component");
-var d3_component_1 = require("./d3.component");
+var user_chart_component_1 = require("./user-chart.component");
+var money_chart_component_1 = require("./money-chart.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +24,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-        declarations: [app_component_1.AppComponent, app_routing_component_1.AppRoutingComponent, dashboard_component_1.DashboardComponent, d3_component_1.D3Component],
+        declarations: [app_component_1.AppComponent, app_routing_component_1.AppRoutingComponent, dashboard_component_1.DashboardComponent, user_chart_component_1.UserChartComponent, money_chart_component_1.MoneyChartComponent],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

@@ -16,7 +16,7 @@ var DashboardComponent = (function () {
 }());
 DashboardComponent = __decorate([
     core_1.Component({
-        selector: 'welcome',
+        selector: 'dashboard',
         template: '<div class="welcome">Welcome</div>'
     }),
     __metadata("design:paramtypes", [])

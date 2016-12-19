@@ -3,7 +3,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {AppRoutingComponent} from "./app-routing.component";
 import {DashboardComponent} from "./dashboard.component";
-import {D3Component} from "./d3.component";
+import {UserChartComponent} from "./user-chart.component";
 import {TestBed, async} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
 
@@ -13,7 +13,7 @@ describe('AppRoutingComponent with TCB', function () {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule],
-            declarations: [AppComponent, AppRoutingComponent, DashboardComponent, D3Component]
+            declarations: [AppComponent, AppRoutingComponent, DashboardComponent, UserChartComponent]
         }).compileComponents();
     }));
 
