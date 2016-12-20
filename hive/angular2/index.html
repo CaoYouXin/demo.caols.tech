@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script>
+        if (!location.origin) {
+            location.origin = location.protocol + "//" + location.hostname + (location.port ? ':' + location.port: '');
+        }
+
+        if (location.toString().match(new RegExp(location.origin + '\/.+'))) {
+            location.href = '/';
+        }
+
+        document.write('<base href="' + location + '" />');</script>
     <title>Angular QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
