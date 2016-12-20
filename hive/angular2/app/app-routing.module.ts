@@ -1,12 +1,14 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {DashboardComponent} from "./dashboard.component";
-import {D3Component} from "./d3.component";
+import {UserChartComponent} from "./user-chart.component";
+import {MoneyChartComponent} from "./money-chart.component";
 
 export const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-    {path: 'dashboard', component: DashboardComponent, data: 'Dashboard'},
-    {path: 'd3', component: D3Component, data: 'D3'},
+    {path: 'dashboard', component: DashboardComponent, data: {name: 'Dashboard'}},
+    {path: 'users', component: UserChartComponent, data: {name: '用户量'}},
+    {path: 'money', component: MoneyChartComponent, data: {name: '收支流水'}},
 ];
 
 @NgModule({

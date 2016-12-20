@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var dashboard_component_1 = require("./dashboard.component");
-var d3_component_1 = require("./d3.component");
+var user_chart_component_1 = require("./user-chart.component");
+var money_chart_component_1 = require("./money-chart.component");
 exports.routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent, data: 'Dashboard' },
-    { path: 'd3', component: d3_component_1.D3Component, data: 'D3' },
+    { path: 'dashboard', component: dashboard_component_1.DashboardComponent, data: { name: 'Dashboard' } },
+    { path: 'users', component: user_chart_component_1.UserChartComponent, data: { name: '用户量' } },
+    { path: 'money', component: money_chart_component_1.MoneyChartComponent, data: { name: '收支流水' } },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
