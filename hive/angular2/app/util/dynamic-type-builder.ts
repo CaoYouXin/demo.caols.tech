@@ -1,15 +1,17 @@
-import {Injectable, Compiler, ComponentFactory, Component, NgModule} from "@angular/core";
+import {Injectable, Compiler, ComponentFactory, Component, NgModule, Input} from "@angular/core";
+import {D3ChartModule} from "../d3-chart.module";
 
-const selector: string = 'dynamic';
+const defaultSelector: string = 'dynamic';
 
 @Injectable()
 export class DynamicTypeBuilder {
 
     private _cacheOfFactories: {[templateKey: string]: ComponentFactory<Component>} = {};
 
-    constructor(private compiler: Compiler) {}
+    constructor(private compiler: Compiler) {
+    }
 
-    public createComponentFactory(html: string, styleUrl: string): Promise<ComponentFactory<Component>> {
+    public createComponentFactory(html: string, styleUrl: string, selector: string): Promise<ComponentFactory<Component>> {
         let factory = this._cacheOfFactories[html];
 
         if (factory) {
@@ -21,7 +23,7 @@ export class DynamicTypeBuilder {
         }
 
         // unknown template ... let's create a Type for it
-        let type = DynamicTypeBuilder.createDynamicComponent(html, styleUrl);
+        let type = DynamicTypeBuilder.createDynamicComponent(html, styleUrl, selector);
         let module = DynamicTypeBuilder.createDynamicModule(type);
 
         return new Promise((resolve) => {
@@ -39,20 +41,20 @@ export class DynamicTypeBuilder {
         });
     }
 
-    private static createDynamicComponent(html: string, styleUrl: string) {
+    private static createDynamicComponent(html: string, styleUrl: string, selector: string) {
         @Component({
-            selector: selector,
+            selector: selector || defaultSelector,
             template: html,
             styleUrls: [styleUrl]
         })
         class DC {
         }
-
         return DC;
     }
 
     private static createDynamicModule(type: any) {
         @NgModule({
+            imports: [D3ChartModule],
             declarations: [type]
         })
         class DM {

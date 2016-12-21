@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var DashboardComponent = (function () {
-    function DashboardComponent() {
+var d3_chart_directive_1 = require("./d3-chart.directive");
+var D3ChartModule = (function () {
+    function D3ChartModule() {
     }
-    return DashboardComponent;
+    return D3ChartModule;
 }());
-DashboardComponent = __decorate([
-    core_1.Component({
-        selector: 'welcome',
-        template: '<div class="welcome">Welcome</div>',
-        styles: ["\n        .welcome {\n            text-align: center;\n            line-height: 5em;\n            font-size: 3rem;\n            \n            color: blueviolet;\n            text-shadow: 5px 5px 5px #344020;\n        }\n    "]
+D3ChartModule = __decorate([
+    core_1.NgModule({
+        declarations: [d3_chart_directive_1.D3ChartDirective],
+        exports: [d3_chart_directive_1.D3ChartDirective]
     }),
     __metadata("design:paramtypes", [])
-], DashboardComponent);
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+], D3ChartModule);
+exports.D3ChartModule = D3ChartModule;
+//# sourceMappingURL=d3-chart.module.js.map

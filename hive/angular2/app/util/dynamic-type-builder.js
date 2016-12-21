@@ -9,13 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var selector = 'dynamic';
+var d3_chart_module_1 = require("../d3-chart.module");
+var defaultSelector = 'dynamic';
 var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
     function DynamicTypeBuilder(compiler) {
         this.compiler = compiler;
         this._cacheOfFactories = {};
     }
-    DynamicTypeBuilder.prototype.createComponentFactory = function (html, styleUrl) {
+    DynamicTypeBuilder.prototype.createComponentFactory = function (html, styleUrl, selector) {
         var _this = this;
         var factory = this._cacheOfFactories[html];
         if (factory) {
@@ -25,7 +26,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
             });
         }
         // unknown template ... let's create a Type for it
-        var type = DynamicTypeBuilder_1.createDynamicComponent(html, styleUrl);
+        var type = DynamicTypeBuilder_1.createDynamicComponent(html, styleUrl, selector);
         var module = DynamicTypeBuilder_1.createDynamicModule(type);
         return new Promise(function (resolve) {
             _this.compiler
@@ -39,7 +40,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
             });
         });
     };
-    DynamicTypeBuilder.createDynamicComponent = function (html, styleUrl) {
+    DynamicTypeBuilder.createDynamicComponent = function (html, styleUrl, selector) {
         var DC = (function () {
             function DC() {
             }
@@ -47,7 +48,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
         }());
         DC = __decorate([
             core_1.Component({
-                selector: selector,
+                selector: selector || defaultSelector,
                 template: html,
                 styleUrls: [styleUrl]
             }),
@@ -63,6 +64,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
         }());
         DM = __decorate([
             core_1.NgModule({
+                imports: [d3_chart_module_1.D3ChartModule],
                 declarations: [type]
             }),
             __metadata("design:paramtypes", [])

@@ -13,11 +13,13 @@ var router_1 = require("@angular/router");
 var dashboard_component_1 = require("./dashboard.component");
 var user_chart_component_1 = require("./user-chart.component");
 var money_chart_component_1 = require("./money-chart.component");
+var order_chart_component_1 = require("./order-chart.component");
 exports.routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent, data: { name: 'Dashboard' } },
     { path: 'users', component: user_chart_component_1.UserChartComponent, data: { name: '用户量' } },
     { path: 'money', component: money_chart_component_1.MoneyChartComponent, data: { name: '收支流水' } },
+    { path: 'order', component: order_chart_component_1.OrderChartComponent, data: { name: '订单量' } },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -6,12 +6,13 @@ import {AppRoutingComponent} from "./app-routing.component";
 import {DashboardComponent} from "./dashboard.component";
 import {UserChartComponent} from "./user-chart.component";
 import {MoneyChartComponent} from "./money-chart.component";
+import {OrderChartComponent} from "./order-chart.component";
 import {D3ChartDirective} from "./d3-chart.directive";
-import {DynamicTypeBuilder} from "./util/dynamic-type-builder";
+import {D3ChartModule} from "./d3-chart.module";
 
 @NgModule({
-    imports: [BrowserModule, AppRoutingModule],
-    declarations: [AppComponent, AppRoutingComponent, DashboardComponent, UserChartComponent, MoneyChartComponent, D3ChartDirective],
+    imports: [BrowserModule, AppRoutingModule, D3ChartModule],
+    declarations: [AppComponent, AppRoutingComponent, DashboardComponent, UserChartComponent, MoneyChartComponent, OrderChartComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -21,6 +21,9 @@ export class D3ChartDirective implements OnChanges, OnDestroy {
     @Input('d3-chartCbParams')
     cbParams: Array<any>;
 
+    @Input('d3-chartSelector')
+    selector: string;
+
     componentRef: ComponentRef<Component>;
 
     constructor(private vcRef: ViewContainerRef, private dtb: DynamicTypeBuilder) {}
@@ -28,10 +31,15 @@ export class D3ChartDirective implements OnChanges, OnDestroy {
     ngOnChanges() {
         if (!this.html) return;
 
-        this.dtb.createComponentFactory(this.html, this.styleUrl)
+        this.dtb.createComponentFactory(this.html, this.styleUrl, this.selector)
             .then((factory: ComponentFactory<Component>) => {
                 // Target will instantiate and inject component (we'll keep reference to it)
                 this.componentRef = this.vcRef.createComponent(factory);
+
+                // let instance = this.componentRef.instance;
+                // Object.getOwnPropertyNames(this.context).forEach((key) => {
+                //     instance[key] = this.context[key];
+                // });
 
                 this.cb.apply(null, this.cbParams);
             });

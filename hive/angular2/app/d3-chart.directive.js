@@ -19,10 +19,14 @@ var D3ChartDirective = (function () {
         var _this = this;
         if (!this.html)
             return;
-        this.dtb.createComponentFactory(this.html, this.styleUrl)
+        this.dtb.createComponentFactory(this.html, this.styleUrl, this.selector)
             .then(function (factory) {
             // Target will instantiate and inject component (we'll keep reference to it)
             _this.componentRef = _this.vcRef.createComponent(factory);
+            // let instance = this.componentRef.instance;
+            // Object.getOwnPropertyNames(this.context).forEach((key) => {
+            //     instance[key] = this.context[key];
+            // });
             _this.cb.apply(null, _this.cbParams);
         });
     };
@@ -50,6 +54,10 @@ __decorate([
     core_1.Input('d3-chartCbParams'),
     __metadata("design:type", Array)
 ], D3ChartDirective.prototype, "cbParams", void 0);
+__decorate([
+    core_1.Input('d3-chartSelector'),
+    __metadata("design:type", String)
+], D3ChartDirective.prototype, "selector", void 0);
 D3ChartDirective = __decorate([
     core_1.Directive({
         selector: '[d3-chart]',
