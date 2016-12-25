@@ -31,14 +31,14 @@
         var storage = yangaiche(sys.local_storage), wrapper = yangaiche(ls.back.get_whole_url);
         return function (url, back_to) {
             console.log(wrapper(url));
-            window.top.document.querySelector('iframe').setAttribute('src', url);
+            window.parent.document.querySelector('iframe').setAttribute('src', url);
 
             storage.set(wrapper(url), wrapper(back_to));
-            window.top.history.replaceState(null, null, wrapper(back_to));
-            window.top.history.pushState(null, null, url);
-            window.top.history.pushState(null, null, wrapper(url));
+            window.parent.history.replaceState(null, null, wrapper(back_to));
+            window.parent.history.pushState(null, null, url);
+            window.parent.history.pushState(null, null, wrapper(url));
 
-            window.top.history.back();
+            window.parent.history.back();
         };
     });
 

@@ -2,11 +2,215 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Demos</title>
+    <title>Demos @ Caols Tech</title>
 
     <link rel="stylesheet" type="text/css" href="./css/clear.css">
-</head>
-<body>
 
+    <style>
+        body {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        body > * {
+            height: 0;
+
+            transition: all .7s ease-in-out;
+
+            overflow: hidden;
+
+            cursor: pointer;
+        }
+
+        body > *:not(#profile):after {
+            content: '';
+
+            display: inline-block;
+            width: 100%;
+
+            margin-top: -100%;
+        }
+
+        body > *:not(#profile):hover {
+            filter: blur(10px);
+        }
+
+        body > * > iframe {
+            width: 100%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+        }
+
+        body > * > iframe:hover {
+            filter: blur(10px);
+        }
+
+        body > #profile {
+            position: fixed;
+
+            right: 0;
+            bottom: 0;
+
+            padding-bottom: 0;
+
+            color: #fff;
+            font-size: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="">
+
+<div id="profile" style="background-color: #344020;">
+    ···
+</div>
+
+<script>
+    function addStylesheetRules (rules) {
+        var styleEl = document.createElement('style'),
+            styleSheet;
+
+        // Append style element to head
+        document.head.appendChild(styleEl);
+
+        // Grab style sheet
+        styleSheet = styleEl.sheet;
+
+        for (var i = 0, rl = rules.length; i < rl; i++) {
+            var j = 1, rule = rules[i], selector = rules[i][0], propStr = '';
+            // If the second argument of a rule is an array of arrays, correct our variables.
+            if (Object.prototype.toString.call(rule[1][0]) === '[object Array]') {
+                rule = rule[1];
+                j = 0;
+            }
+
+            for (var pl = rule.length; j < pl; j++) {
+                var prop = rule[j];
+                propStr += prop[0] + ':' + prop[1] + (prop[2] ? ' !important' : '') + ';\n';
+            }
+
+            // Insert CSS Rule
+            styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
+        }
+    }
+
+    var oneThird = 1 / 3 * 100 + '%', twoThird = 2 / 3 * 100 + '%';
+    var customed = window.innerHeight / 2 / window.innerWidth * 100 + '%';
+    var lh1 = window.innerHeight / 100, lh2 = lh1 / 2;
+    var wh1 = window.innerHeight, wh2 = wh1 / 2, wh3 = wh1 / 3;
+    var ih1 = window.innerWidth / 16 * 9, ih2 = ih1 / 2, ih3 = ih1 / 3;
+    addStylesheetRules([
+        ['.row-1.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', '100%']]],
+        ['.row-1 > *:not(#profile):after', [['height', ih2 + 'px']]],
+        ['.row-1.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh1 - ih2) / 2 + 'px']]],
+        ['.row-1> #profile', [['width', '50%'], ['height', '100%'], ['line-height', lh1 + 'em']]],
+        ['.row-2.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', customed]]],
+        ['.row-2 > *:not(#profile):after', [['height', ih2 + 'px']]],
+        ['.row-2.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh2 - ih2) / 2 + 'px']]],
+        ['.row-2> #profile', [['height', '50%'], ['line-height', lh2 + 'em']]],
+        ['.count-2 > #profile', [['width', '100%']]],
+        ['.count-3 > #profile', [['width', '50%']]],
+        ['.row-2.col-3 > *', [['float', 'left'], ['width', oneThird], ['padding-bottom', customed]]],
+        ['.row-2.col-3 > * > iframe', [['height', ih3 + 'px'], ['margin-top', (wh2 - ih3) / 2 + 'px']]],
+        ['.count-4 > #profile', [['width', twoThird]]],
+        ['.count-5 > #profile', [['width', oneThird]]],
+    ]);
+
+    var profile = document.getElementById('profile');
+    var data = {
+        "demos": [
+            {
+                "url": "forum/index.html",
+                "labels": ["华丽归来", "配色"],
+                "description": ""
+            },
+            {
+                "url": "order/index.html",
+                "labels": ["主页", "订单"],
+                "description": ""
+            },
+            {
+                "url": "o2o/index.html",
+                "labels": ["主页", "订单"],
+                "description": ""
+            },
+            {
+                "url": "hive/angular2/index.html",
+                "labels": ["主页", "订单"],
+                "description": ""
+            }
+        ]
+    };
+
+    var ww = window.window.innerWidth;
+    for (var i = 0, rl = data.demos.length; i < rl; i++) {
+
+        var element = document.createElement('div');
+        element.classList.add('click-able');
+        var s = (~~((1 << 24) * Math.random())).toString(16);
+        element.style.backgroundColor = '#' + '000000'.substring(s.length) + s;
+        element.style.opacity = 0;
+
+        var iframe = document.createElement('iframe');
+        iframe.scrolling = 'no';
+        iframe.src = data.demos[i].url;
+        element.appendChild(iframe);
+
+        setTimeout(function (count, elem, before, iframe) {
+            document.body.insertBefore(elem, before);
+
+            iframe.contentWindow.onload = function () {
+                iframe.contentDocument.body.style.zoom = iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth;
+                iframe.contentWindow.addEventListener('resize', function () {
+                    iframe.contentDocument.body.style.zoom = iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth;
+                });
+            };
+
+            document.body.className = '';
+
+            var classList = document.body.classList;
+            var row = 1, col = row + 1;
+            while (true) {
+                if (row * col - count - 1 < col && row * col - count - 1 >= 0) {
+                    break;
+                }
+
+                if (row === col) {
+                    col++;
+                } else {
+                    row++;
+                }
+            }
+
+            classList.add.apply(classList, ['count-' + count, 'row-' + row, 'col-' + col]);
+
+            setTimeout(function (e) {
+                e.style.opacity = 1;
+            }, 300, elem);
+        }, 2000 * i, i + 1, element, profile, iframe);
+    }
+
+    document.addEventListener('click', function (e) {
+        console.log('christmas', e);
+
+        if (e.target.classList.contains('click-able')) {
+            var src = e.target.firstElementChild.getAttribute('src');
+
+            var a = document.createElement('a');
+            a.href = src;
+            a.style.display = 'none';
+            a.setAttribute('target', '_self');
+            document.body.appendChild(a);
+            a.click();
+        }
+    }, true);
+</script>
 </body>
 </html>

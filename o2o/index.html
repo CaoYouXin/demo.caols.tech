@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 
     <title>O2O</title>
 
@@ -27,7 +28,7 @@
             transition: all .3s ease-in-out;
         }
 
-        .iframe {
+        .iframe-div {
             margin: 0;
 
             position: relative;
@@ -57,11 +58,13 @@
             || window.MozMutationObserver;
 
         $(document).ready(function () {
+            console.log('christmas', window === window.top);
+
             document.querySelector('.phone').style.transform = 'scale(' + (window.innerHeight / 738) + ')';
 
-            $(".iframe").niceScroll(".iframe iframe", {cursorcolor: "#0F0"});
+            $(".iframe-div").niceScroll(".iframe-div iframe", {cursorcolor: "#0F0"});
             var cw = null;
-            var target = document.querySelector('iframe'),
+            var target = window.document.querySelector('.iframe-div iframe'),
                 observer = new MutationObserver(function (mutation) {
 
                     if (!mutation.length) {
@@ -72,34 +75,38 @@
                     mutation.forEach(function (m) {
                         if (m.attributeName === 'src') {
 
-                            var interval = setInterval(function () {
+                            var interval = setInterval(function (t) {
                                 try {
-                                    console.log('to set', target.contentDocument.body);
+                                    console.log('to set', t.contentDocument.body);
                                 } catch (e) {
                                     clearInterval(interval);
                                 }
 
-                                if (target.contentDocument.lastElementChild.offsetWidth) {
+                                if (t.contentDocument.lastElementChild.offsetWidth) {
                                     clearInterval(interval);
 
-//                            $('.iframe').getNiceScroll().resize();
-                                    document.querySelector('iframe').style.height = Math.max(target.contentDocument.body.offsetHeight * target.contentWindow.mobileUtil.bodyScale, 480) + 'px';
+//                                  $('.iframe').getNiceScroll().resize();
+                                    t.style.height = Math.max(t.contentDocument.body.offsetHeight * t.contentWindow.mobileUtil.bodyScale, 480) + 'px';
 
-                                    target.contentDocument.body.style.cursor = 'url(hyper.cur), pointer';
-                                    document.body.style.background = target.contentDocument.body.style.background;
+                                    console.log('christmas', t.contentDocument.body.offsetHeight * t.contentWindow.mobileUtil.bodyScale);
 
-                                    var nodeList = target.contentDocument.querySelectorAll('.store-item-cover');
+                                    t.contentDocument.body.style.cursor = 'url(hyper.cur), pointer';
+                                    document.body.style.background = t.contentDocument.body.style.background;
+
+                                    var nodeList = t.contentDocument.querySelectorAll('.store-item-cover');
                                     console.log('setting ', nodeList);
                                     for (var i = 0; i < nodeList.length; i++) {
-                                        nodeList.item(i).style.height = (480 / target.contentWindow.mobileUtil.bodyScale) + 'px';
+                                        nodeList.item(i).style.height = (480 / t.contentWindow.mobileUtil.bodyScale) + 'px';
                                         console.log(nodeList.item(i).style.height);
                                     }
                                     console.log('set done');
                                 }
-                            }, 500);
+                            }, 500, m.target);
                         } else if (m.attributeName === 'style') {
 
-                            target.contentDocument.querySelector('footer').style.top = ((480 + Math.abs(parseFloat(target.style.transform.match(/translate3d\(0px, (.*?)px, 0px\)/)[1]))) / target.contentWindow.mobileUtil.bodyScale - 90) + 'px';
+                            try {
+                                m.target.contentDocument.querySelector('footer').style.top = ((480 + Math.abs(parseFloat(m.target.style.transform.match(/translate3d\(0px, (.*?)px, 0px\)/)[1]))) / m.target.contentWindow.mobileUtil.bodyScale - 90) + 'px';
+                            } catch (e) {}
                         }
                     });
                 }),
@@ -109,13 +116,15 @@
 
             observer.observe(target, config);
 
-            $("iframe").attr('src', 'store.html');
+            $(".iframe-div iframe").attr('src', 'store.html');
+
+            console.log('christmas', target.getAttribute('src'));
         });
 
         function lockScroll() {
-            $('.iframe').getNiceScroll().hide();
+            $('.iframe-div iframe').getNiceScroll().hide();
 //            setTimeout(function() {
-            var iframe = document.querySelector('iframe');
+            var iframe = document.querySelector('.iframe-div iframe');
             var top = parseFloat(iframe.style.transform.match(/translate3d\(0px, (.*?)px, 0px\)/)[1]);
 
             var nodeList = iframe.contentDocument.querySelectorAll('.store-item-cover');
@@ -126,14 +135,14 @@
         }
 
         function unlockScroll() {
-            $('.iframe').getNiceScroll().show();
+            $('.iframe-div iframe').getNiceScroll().show();
         }
     </script>
 </head>
 <body>
 
 <div class="phone">
-    <div class="iframe">
+    <div class="iframe-div">
         <iframe src="" scrolling="no" frameborder="0"></iframe>
     </div>
 </div>

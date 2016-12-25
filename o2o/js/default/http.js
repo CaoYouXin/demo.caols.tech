@@ -2039,7 +2039,7 @@
 
                         setTimeout(function () {
                             if (0 === --app.http.count) {
-                                window.top.document.querySelector('iframe').style.height = Math.max(document.body.offsetHeight * window.mobileUtil.bodyScale, 480) + 'px';
+                                window.parent.document.querySelector('iframe').style.height = Math.max(document.body.offsetHeight * window.mobileUtil.bodyScale, 480) + 'px';
                                 // window.top.$('.iframe').getNiceScroll().resize();
 
                                 document.body.style.cursor = 'url(hyper.cur), pointer';
@@ -2114,8 +2114,8 @@
 
                     setTimeout(function () {
                         if (0 === --app.http.count) {
-                            window.top.document.querySelector('iframe').style.height = Math.max(document.body.offsetHeight * window.mobileUtil.bodyScale, 480) + 'px';
-                            window.top.$('.iframe').getNiceScroll().resize();
+                            window.parent.document.querySelector('iframe').style.height = Math.max(document.body.offsetHeight * window.mobileUtil.bodyScale, 480) + 'px';
+                            window.parent.$('.iframe').getNiceScroll().resize();
                         }
                     }, 500);
                 }, 0);
