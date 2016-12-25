@@ -197,18 +197,26 @@
         }, 2000 * i, i + 1, element, profile, iframe);
     }
 
+    function go(src) {
+        var a = document.querySelector('a.let-me-go') || document.createElement('a');
+        a.href = src;
+        a.style.display = 'none';
+        a.classList.add('let-me-go');
+        a.setAttribute('target', '_self');
+        document.body.appendChild(a);
+        a.click();
+    }
+
     document.addEventListener('click', function (e) {
         console.log('christmas', e);
 
         if (e.target.classList.contains('click-able')) {
             var src = e.target.firstElementChild.getAttribute('src');
 
-            var a = document.createElement('a');
-            a.href = src;
-            a.style.display = 'none';
-            a.setAttribute('target', '_self');
-            document.body.appendChild(a);
-            a.click();
+            go(src);
+        } else if (e.target.id === 'profile') {
+
+            go('profile/index.html');
         }
     }, true);
 </script>
