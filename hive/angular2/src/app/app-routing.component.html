@@ -1,0 +1,9 @@
+<div *ngIf="r">
+    <div class="nav" (click)="awesome($event)" routerLink="{{r.path}}" routerLinkActive="active"><a>{{r.data.name}}</a><br>
+        <div class="container" [class.show]="isShow">
+            <div class="radius" [class.animated]="isAnimated | async"
+                 [style.width]="width" [style.height]="height"
+                 [style.left]="left" [style.top]="top"></div>
+        </div>
+    </div>
+</div>

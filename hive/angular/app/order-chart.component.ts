@@ -70,7 +70,7 @@ export class OrderChartComponent implements OnInit {
         let ngContentSign = yAxis.html().match(/\s(.*?ngcontent.*?)=/)[1];
         yAxisGen(yAxis.transition());
         yAxis.selectAll('g > *').each((_: any, i: number, marker: any) => {
-            d3.select(marker[i]).attr(ngContentSign, true);
+            d3.select(marker[i]).attr(ngContentSign, '');
         });
     }
 

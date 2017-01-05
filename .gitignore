@@ -7,5 +7,5 @@
 *.iml
 out
 gen
-hive/angular2/node_modules
-hive/angular/node_modules
+*/node_modules
+node_modules
