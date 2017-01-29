@@ -63,16 +63,18 @@ window.mobileUtil = (function (win, doc) {
             //
             //         data['target-densitydpi'] = medium_dpi;
             //     } else {
-                    var scale = win.innerWidth / data.width;
+            var scale = win.innerWidth / data.width;
 
-                    scale = scale.toFixed(2);
+            scale = scale.toFixed(2);
 
-                    data['initial-scale'] = data['maximum-scale'] = data['minimum-scale'] = scale;
+            data['initial-scale'] = data['maximum-scale'] = data['minimum-scale'] = scale;
 
-                    this.bodyScale = document.body.style.zoom = scale;
+            document.body.style.transformOrigin = '0 0 0';
+            document.body.style.transform = 'scale(' + scale + ')';
+            this.bodyScale = scale;
                 // }
 
-                metaEl.content = JSON.stringify(data).replace(/\s*/g, '').replace(/[{}"]/g, '').replace(/:/g, '=');
+            metaEl.content = JSON.stringify(data).replace(/\s*/g, '').replace(/[{}"]/g, '').replace(/:/g, '=');
             // }
             console.log(data);
         },
