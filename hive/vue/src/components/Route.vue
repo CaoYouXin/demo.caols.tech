@@ -17,10 +17,10 @@
     data: () => ({
       isShow: false,
       isAnimated: false,
-      width: false,
-      height: false,
-      left: false,
-      top: false,
+      width: 0,
+      height: 0,
+      left: 0,
+      top: 0,
     }),
     watch: {
       isSelected: function (val, oldVal) {
@@ -33,9 +33,14 @@
       awesome(e) {
         this.$emit('routeclick');
 
+        let target = e.target;
+        while (!target.classList.contains('container')) {
+            target = target.parentElement;
+        }
+
         const v1 = e.offsetX * e.offsetX;
-        const v2 = (e.target.offsetHeight - e.offsetY) * (e.target.offsetHeight - e.offsetY);
-        const v3 = (e.target.offsetWidth - e.offsetX) * (e.target.offsetWidth - e.offsetX);
+        const v2 = (target.offsetHeight - e.offsetY) * (target.offsetHeight - e.offsetY);
+        const v3 = (target.offsetWidth - e.offsetX) * (target.offsetWidth - e.offsetX);
         const v4 = e.offsetY * e.offsetY;
         const radius = Math.sqrt(Math.max(v1 + v4, v1 + v2, v3 + v4, v3 + v2));
 
@@ -44,10 +49,9 @@
         this.left = e.offsetX - radius;
         this.top = e.offsetY - radius;
 
-        const self = this;
-        const nextTick = Vue.nextTick((t) => {
-          self.isAnimated = true;
-        });
+        setTimeout((self) => {
+            self.isAnimated = true;
+        }, 100, this);
       },
     },
   };
@@ -102,7 +106,7 @@
 
     transform: scale(0);
     transform-origin: 50% 50% 0;
-    transition: transform .3s ease-in-out;
+    transition: transform .5s ease-in-out;
   }
 
   a.nav > .container > .radius.animated {
