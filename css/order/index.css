@@ -2,6 +2,11 @@ html {
     font-size: 16px;
 }
 
+body {
+    position: absolute;
+    height: 100%;
+}
+
 body, body > * {
     width: 100%;
 }
@@ -152,6 +157,8 @@ header.solid > .links > a {
 .intro {
     top: 100%;
     height: 420px;
+
+    background-color: white;
 }
 
 .intro > .wrapper > h1, .pros > *:nth-child(1) > .wrapper > h1, .price > *:nth-child(1) > .wrapper > h1, .contact > .wrapper > h1 {
@@ -356,4 +363,10 @@ footer {
     text-align: center;
 
     text-shadow: 1px 1px 2px #ffffff;
+}
+
+@media all and (max-height: 500px) {
+    body {
+        height: 150%;
+    }
 }
