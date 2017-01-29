@@ -38,12 +38,13 @@
 
         body > .click-able:hover {
             filter: blur(10px);
+            -webkit-filter: blur(10px);
         }
 
         body > * > iframe {
             width: 100%;
 
-            overflow: hidden;
+            overflow: auto;
 
             pointer-events: none;
         }
@@ -54,7 +55,7 @@
 
         body > #description {
             position: fixed;
-            z-index: 1;
+            z-index: -1;
 
             padding: 30px;
 
@@ -222,9 +223,14 @@
             document.body.insertBefore(elem, before);
 
             iframe.contentWindow.onload = function () {
-                iframe.contentDocument.body.style.zoom = iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth;
+
+                iframe.contentDocument.body.style.width = iframe.contentWindow.top.innerWidth + 'px';
+                iframe.contentDocument.body.style.transformOrigin = '0 0 0';
+
+                iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
+
                 iframe.contentWindow.addEventListener('resize', function () {
-                    iframe.contentDocument.body.style.zoom = iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth;
+                    iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
                 });
             };
 
@@ -286,9 +292,12 @@
 
             descElem.style.top = e.target.offsetTop + topOffset + 'px';
             descElem.style.left = e.target.offsetLeft + leftOffset + 'px';
+            descElem.style.zIndex = 1;
 
             // go(src);
         } else if (e.target.id === 'profile') {
+
+            descElem.style.zIndex = -1;
 
             // go('profile/index.html');
         }
