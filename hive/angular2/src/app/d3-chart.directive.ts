@@ -3,10 +3,11 @@ import {
     ComponentFactory
 } from "@angular/core";
 import {DynamicTypeBuilder} from "./util/dynamic-type-builder";
+import {DomTreeAttrFixer} from "./util/dom-tree-attr-fixer";
 
 @Directive({
     selector: '[d3-chart]',
-    providers: [DynamicTypeBuilder]
+    providers: [DynamicTypeBuilder, DomTreeAttrFixer]
 })
 export class D3ChartDirective implements OnChanges, OnDestroy {
     @Input('d3-chart')
@@ -26,7 +27,7 @@ export class D3ChartDirective implements OnChanges, OnDestroy {
 
     componentRef: ComponentRef<Component>;
 
-    constructor(private vcRef: ViewContainerRef, private dtb: DynamicTypeBuilder) {}
+    constructor(private vcRef: ViewContainerRef, private dtb: DynamicTypeBuilder, private dtaf: DomTreeAttrFixer) {}
 
     ngOnChanges() {
         if (!this.html) return;
@@ -42,6 +43,8 @@ export class D3ChartDirective implements OnChanges, OnDestroy {
                 // });
 
                 this.cb.apply(null, this.cbParams);
+
+                this.dtaf.tt(this.vcRef.element.nativeElement.parentElement);
             });
     }
 

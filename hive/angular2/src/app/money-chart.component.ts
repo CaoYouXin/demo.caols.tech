@@ -3,15 +3,15 @@ import {Location} from "@angular/common";
 import * as d3 from "d3";
 
 @Component({
-  selector: 'user-chart',
+  selector: 'money-chart',
   template: '<div class="chart"><div *d3-chart="htmlValue; styleUrl:styleUrl; cb:startTransitions; cbParams:cbParams"></div></div>',
   // styles: [`
   //   `],
-  styleUrls: ['./user-chart.component.css'],
+  styleUrls: ['./money-chart.component.css']
 })
-export class UserChartComponent implements OnInit {
+export class MoneyChartComponent implements OnInit {
   htmlValue: string;
-  // styleUrl: string = './user-chart.component.css';
+  styleUrl: string = 'app/money-chart.component.css';
   cbParams: Array<any>;
 
   path: string = this.location.path(false);
@@ -286,7 +286,7 @@ export class UserChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    let self: UserChartComponent = this;
+    let self: MoneyChartComponent = this;
     let parseDate = d3.timeParse('%Y-%m-%d');
     d3.json('assets/data/user-chart-data.json', function (error, rawData) {
       if (error) {
@@ -324,6 +324,6 @@ export class UserChartComponent implements OnInit {
 
     });
 
-    console.log('user chart init end');
+    console.log('money chart init end');
   }
 }

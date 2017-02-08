@@ -1,7 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 .chart {
-  background-color: #F5F6EB;
+  background-color: #34352C;
 }
 
 svg {
@@ -20,7 +20,7 @@ svg {
 }
 
 .axis .tick line {
-    stroke: rgba(0, 0, 0, 1);
+    stroke: rgba(255, 255, 255, 1);
 }
 
 .area {

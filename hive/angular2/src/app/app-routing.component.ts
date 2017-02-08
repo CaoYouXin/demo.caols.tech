@@ -7,8 +7,8 @@ const falsePromise = new Promise<boolean>((resolve, reject) => {
 
 @Component({
     selector: 'route',
-    templateUrl: 'app/app-routing.component.html',
-    styleUrls: ['app/app-routing.component.css']
+    templateUrl: './app-routing.component.html',
+    styleUrls: ['./app-routing.component.css']
 })
 export class AppRoutingComponent {
 
