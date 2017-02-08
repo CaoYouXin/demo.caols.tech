@@ -51,8 +51,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
                 selector: selector || defaultSelector,
                 template: html,
                 styleUrls: [styleUrl]
-            }),
-            __metadata("design:paramtypes", [])
+            })
         ], DC);
         return DC;
     };
@@ -66,8 +65,7 @@ var DynamicTypeBuilder = DynamicTypeBuilder_1 = (function () {
             core_1.NgModule({
                 imports: [d3_chart_module_1.D3ChartModule],
                 declarations: [type]
-            }),
-            __metadata("design:paramtypes", [])
+            })
         ], DM);
         return DM;
     };

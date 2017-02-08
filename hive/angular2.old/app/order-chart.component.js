@@ -5,9 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var core_1 = require("@angular/core");
 var d3 = require("d3");
 var OrderChartComponent = (function () {
@@ -71,7 +68,7 @@ var OrderChartComponent = (function () {
         var ngContentSign = yAxis.html().match(/\s(.*?ngcontent.*?)=/)[1];
         yAxisGen(yAxis.transition());
         yAxis.selectAll('g > *').each(function (_, i, marker) {
-            d3.select(marker[i]).attr(ngContentSign, true);
+            d3.select(marker[i]).attr(ngContentSign, '');
         });
     };
     OrderChartComponent.prototype.ngOnInit = function () {
@@ -200,8 +197,7 @@ OrderChartComponent = __decorate([
     core_1.Component({
         selector: 'order-chart',
         template: '<div class="chart" (dblclick)="toggleTweenOverlapAndStacked.apply(_self, cbParams)"><div *d3-chart="htmlValue; styleUrl:styleUrl; cb:startTransitions; cbParams:cbParams;"></div></div>'
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], OrderChartComponent);
 exports.OrderChartComponent = OrderChartComponent;
 //# sourceMappingURL=order-chart.component.js.map

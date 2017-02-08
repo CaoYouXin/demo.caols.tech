@@ -61,8 +61,7 @@ AppRoutingComponent = __decorate([
         selector: 'route',
         templateUrl: 'app/app-routing.component.html',
         styleUrls: ['app/app-routing.component.css']
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], AppRoutingComponent);
 exports.AppRoutingComponent = AppRoutingComponent;
 //# sourceMappingURL=app-routing.component.js.map
