@@ -1,6 +1,6 @@
 import {Injectable, Compiler, ComponentFactory, Component, NgModule} from "@angular/core";
 import {D3ChartModule} from "../d3-chart.module";
-import {JitCompiler} from "@angular/compiler";
+// import {JITCompiler} from "@angular/compiler";
 
 const defaultSelector: string = 'dynamic';
 
@@ -9,7 +9,7 @@ export class DynamicTypeBuilder {
 
     private _cacheOfFactories: {[templateKey: string]: ComponentFactory<Component>} = {};
 
-    constructor(private compiler: JitCompiler) {
+    constructor(private compiler: Compiler) {
     }
 
     public createComponentFactory(html: string, styleUrl: string, selector: string): Promise<ComponentFactory<Component>> {
@@ -46,10 +46,11 @@ export class DynamicTypeBuilder {
         @Component({
             selector: selector || defaultSelector,
             template: html,
-            styleUrls: [styleUrl]
+          // styles: [styleUrl]
         })
         class DC {
         }
+
         return DC;
     }
 
