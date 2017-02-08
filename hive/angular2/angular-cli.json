@@ -40,6 +40,9 @@
       "config": "./karma.conf.js"
     }
   },
+  "webpack": {
+    "config": "./webpack.conf.js"
+  },
   "defaults": {
     "styleExt": "css",
     "prefixInterfaces": false,
