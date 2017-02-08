@@ -1,0 +1,7 @@
+<h1>Hive</h1>
+<nav>
+    <route *ngFor="let r of routes" [r]="r" [isSelected]="r === selectedRoute" (click)="clicked(r)"></route>
+</nav>
+<div class="view">
+    <router-outlet></router-outlet>
+</div>
