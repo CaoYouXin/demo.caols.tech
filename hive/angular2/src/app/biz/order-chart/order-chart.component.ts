@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import * as d3 from "d3";
-import {DomTreeAttrFixer} from "./util/dom-tree-attr-fixer";
+import {DomTreeAttrFixer} from "../../util/dom-tree-attr-fixer";
 
 @Component({
   selector: 'order-chart',
@@ -10,7 +10,7 @@ import {DomTreeAttrFixer} from "./util/dom-tree-attr-fixer";
 })
 export class OrderChartComponent implements OnInit {
   htmlValue: string;
-  styleUrl: string = 'app/order-chart.component.css';
+  // styleUrl: string = 'app/biz/money-chart/order-chart.component.css';
   cbParams: Array<any> = [];
   _self: OrderChartComponent = this;
 

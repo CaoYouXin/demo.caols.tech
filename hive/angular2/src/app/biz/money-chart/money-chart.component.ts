@@ -5,13 +5,11 @@ import * as d3 from "d3";
 @Component({
   selector: 'money-chart',
   template: '<div class="chart"><div *d3-chart="htmlValue; styleUrl:styleUrl; cb:startTransitions; cbParams:cbParams"></div></div>',
-  // styles: [`
-  //   `],
   styleUrls: ['./money-chart.component.css']
 })
 export class MoneyChartComponent implements OnInit {
   htmlValue: string;
-  styleUrl: string = 'app/money-chart.component.css';
+  // styleUrl: string = 'app/biz/money-chart/money-chart.component.css';
   cbParams: Array<any>;
 
   path: string = this.location.path(false);

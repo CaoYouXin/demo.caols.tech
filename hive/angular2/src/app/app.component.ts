@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {Routes, Route} from "@angular/router";
-import {routes as appRoutes} from "./app-routing.module";
+import {routes as appRoutes} from "./route/app-routing.module";
 
 @Component({
     selector: 'my-app',

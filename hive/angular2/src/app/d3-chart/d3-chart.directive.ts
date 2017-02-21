@@ -2,8 +2,8 @@ import {
     Directive, Input, ViewContainerRef, OnChanges, OnDestroy, ComponentRef, Component,
     ComponentFactory
 } from "@angular/core";
-import {DynamicTypeBuilder} from "./util/dynamic-type-builder";
-import {DomTreeAttrFixer} from "./util/dom-tree-attr-fixer";
+import {DynamicTypeBuilder} from "../util/dynamic-type-builder";
+import {DomTreeAttrFixer} from "../util/dom-tree-attr-fixer";
 
 @Directive({
     selector: '[d3-chart]',

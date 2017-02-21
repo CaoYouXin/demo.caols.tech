@@ -1,5 +1,5 @@
 import {Injectable, Compiler, ComponentFactory, Component, NgModule} from "@angular/core";
-import {D3ChartModule} from "../d3-chart.module";
+import {D3ChartModule} from "../d3-chart/d3-chart.module";
 // import {JITCompiler} from "@angular/compiler";
 
 const defaultSelector: string = 'dynamic';

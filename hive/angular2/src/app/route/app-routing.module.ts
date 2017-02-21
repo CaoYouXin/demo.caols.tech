@@ -1,9 +1,9 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {DashboardComponent} from "./dashboard.component";
-import {UserChartComponent} from "./user-chart.component";
-import {MoneyChartComponent} from "./money-chart.component";
-import {OrderChartComponent} from "./order-chart.component";
+import {DashboardComponent} from "../biz/dashboard/dashboard.component";
+import {UserChartComponent} from "../biz/user-chart/user-chart.component";
+import {MoneyChartComponent} from "../biz/money-chart/money-chart.component";
+import {OrderChartComponent} from "../biz/order-chart/order-chart.component";
 
 export const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
