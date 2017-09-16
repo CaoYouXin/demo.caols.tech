@@ -1,144 +1,146 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Demos @ Caols Tech</title>
+  <meta charset="UTF-8">
+  <title>Demos @ Caols Tech</title>
 
-    <link rel="stylesheet" type="text/css" href="./css/clear.css">
+  <link rel="stylesheet" type="text/css" href="./css/clear.css">
 
-    <style>
-        body {
-            position: fixed;
+  <style>
+    body {
+      position: fixed;
 
-            left: 0;
-            top: 0;
+      left: 0;
+      top: 0;
 
-            width: 100%;
-            height: 100%;
-        }
+      width: 100%;
+      height: 100%;
+    }
 
-        body > * {
-            height: 0;
+    body>* {
+      height: 0;
 
-            transition: all .7s ease-in-out;
+      transition: all .7s ease-in-out;
 
-            overflow: hidden;
+      overflow: hidden;
 
-            cursor: pointer;
-        }
+      cursor: pointer;
+    }
 
-        body > .click-able:after {
-            content: '';
+    body>.click-able:after {
+      content: '';
 
-            display: inline-block;
-            width: 100%;
+      display: inline-block;
+      width: 100%;
 
-            margin-top: -100%;
-        }
+      margin-top: -100%;
+    }
 
-        body > .click-able:hover {
-            filter: blur(10px);
-            -webkit-filter: blur(10px);
-        }
+    body>.click-able:hover {
+      filter: blur(10px);
+      -webkit-filter: blur(10px);
+    }
 
-        body > * > iframe {
-            width: 100%;
+    body>*>iframe {
+      width: 100%;
 
-            overflow: auto;
+      overflow: auto;
 
-            pointer-events: none;
-        }
+      pointer-events: none;
+    }
 
-        body > * > iframe:hover {
-            filter: blur(10px);
-        }
+    body>*>iframe:hover {
+      filter: blur(10px);
+    }
 
-        body > #description {
-            position: fixed;
-            z-index: -1;
+    body>#description {
+      position: fixed;
+      z-index: -1;
 
-            padding: 30px;
+      padding: 30px;
 
-            color: white;
-            text-align: center;
+      color: white;
+      text-align: center;
 
-            top: 0;
-            left: 0;
+      top: 0;
+      left: 0;
 
-            border-radius: 10px;
-            background-image: radial-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.5) 100%);
+      border-radius: 10px;
+      background-image: radial-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.5) 100%);
 
-            pointer-events: none;
+      pointer-events: none;
 
-            transition: transform 1s ease-in-out;
-        }
+      transition: transform 1s ease-in-out;
+    }
 
-        body > #description:after {
-            content: '';
+    body>#description:after {
+      content: '';
 
-            display: inline-block;
+      display: inline-block;
 
-            width: 0;
-            height: 100%;
+      width: 0;
+      height: 100%;
 
-            vertical-align: middle;
-            overflow: hidden;
-        }
+      vertical-align: middle;
+      overflow: hidden;
+    }
 
-        body > #description > * {
-          display: inline-block;
-          vertical-align: middle;
-        }
+    body>#description>* {
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-        body > #profile {
-            position: fixed;
+    body>#profile {
+      position: fixed;
 
-            right: 0;
-            bottom: 0;
+      right: 0;
+      bottom: 0;
 
-            padding-bottom: 0;
+      padding-bottom: 0;
 
-            color: #fff;
-            font-size: 100px;
-            text-align: center;
-        }
-    </style>
+      color: #fff;
+      font-size: 100px;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body class="">
 
-<div id="profile" style="background-color: #344020;">
+  <div id="profile" style="background-color: #344020;">
     ···
-</div>
+  </div>
 
-<div id="description"></div>
+  <div id="description"></div>
 
-<script>
-    function addStylesheetRules (rules) {
-        var styleEl = document.createElement('style'),
-            styleSheet;
+  <script>
+    function addStylesheetRules(rules) {
+      var styleEl = document.createElement('style'),
+        styleSheet;
 
-        // Append style element to head
-        document.head.appendChild(styleEl);
+      // Append style element to head
+      document.head.appendChild(styleEl);
 
-        // Grab style sheet
-        styleSheet = styleEl.sheet;
+      // Grab style sheet
+      styleSheet = styleEl.sheet;
 
-        for (var i = 0, rl = rules.length; i < rl; i++) {
-            var j = 1, rule = rules[i], selector = rules[i][0], propStr = '';
-            // If the second argument of a rule is an array of arrays, correct our variables.
-            if (Object.prototype.toString.call(rule[1][0]) === '[object Array]') {
-                rule = rule[1];
-                j = 0;
-            }
-
-            for (var pl = rule.length; j < pl; j++) {
-                var prop = rule[j];
-                propStr += prop[0] + ':' + prop[1] + (prop[2] ? ' !important' : '') + ';\n';
-            }
-
-            // Insert CSS Rule
-            styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
+      for (var i = 0, rl = rules.length; i < rl; i++) {
+        var j = 1, rule = rules[i], selector = rules[i][0], propStr = '';
+        // If the second argument of a rule is an array of arrays, correct our variables.
+        if (Object.prototype.toString.call(rule[1][0]) === '[object Array]') {
+          rule = rule[1];
+          j = 0;
         }
+
+        for (var pl = rule.length; j < pl; j++) {
+          var prop = rule[j];
+          propStr += prop[0] + ':' + prop[1] + (prop[2] ? ' !important' : '') + ';\n';
+        }
+
+        // Insert CSS Rule
+        styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
+      }
     }
 
     var oneThird = 1 / 3 * 100 + '%', twoThird = 2 / 3 * 100 + '%', minusOneThird = (1 / 3 * 100 - 10) + '%';
@@ -149,159 +151,161 @@
     var wh1 = window.innerHeight, wh2 = wh1 / 2, wh3 = wh1 / 3;
     var ih1 = window.innerWidth / 16 * 9, ih2 = ih1 / 2, ih3 = ih1 / 3;
     addStylesheetRules([
-        ['.row-1.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', '100%']]],
-        ['.row-1.col-2 > #description', [['width', '40%'], ['height', '90%']]],
-        ['.row-1 > .click-able:after', [['height', ih2 + 'px']]],
-        ['.row-1.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh1 - ih2) / 2 + 'px']]],
-        ['.row-1 > #profile', [['width', '50%'], ['height', '100%'], ['line-height', lh1 + 'em']]],
-        ['.row-2.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', customed]]],
-        ['.row-2.col-2 > #description', [['width', '40%'], ['height', '40%']]],
-        ['.row-2 > .click-able:after', [['height', ih2 + 'px']]],
-        ['.row-2.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh2 - ih2) / 2 + 'px']]],
-        ['.row-2 > #profile', [['height', '50%'], ['line-height', lh2 + 'em']]],
-        ['.count-2 > #profile', [['width', '100%']]],
-        ['.count-3 > #profile', [['width', '50%']]],
-        ['.row-2.col-3 > *', [['float', 'left'], ['width', oneThird], ['padding-bottom', customed]]],
-        ['.row-2.col-3 > * > iframe', [['height', ih3 + 'px'], ['margin-top', (wh2 - ih3) / 2 + 'px']]],
-        ['.row-2.col-3 > #description', [['width', minusOneThird], ['height', '40%']]],
-        ['.count-4 > #profile', [['width', twoThird]]],
-        ['.count-5 > #profile', [['width', oneThird]]],
+      ['.row-1.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', '100%']]],
+      ['.row-1.col-2 > #description', [['width', '40%'], ['height', '90%']]],
+      ['.row-1 > .click-able:after', [['height', ih2 + 'px']]],
+      ['.row-1.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh1 - ih2) / 2 + 'px']]],
+      ['.row-1 > #profile', [['width', '50%'], ['height', '100%'], ['line-height', lh1 + 'em']]],
+      ['.row-2.col-2 > *', [['float', 'left'], ['width', '50%'], ['padding-bottom', customed]]],
+      ['.row-2.col-2 > #description', [['width', '40%'], ['height', '40%']]],
+      ['.row-2 > .click-able:after', [['height', ih2 + 'px']]],
+      ['.row-2.col-2 > * > iframe', [['height', ih2 + 'px'], ['margin-top', (wh2 - ih2) / 2 + 'px']]],
+      ['.row-2 > #profile', [['height', '50%'], ['line-height', lh2 + 'em']]],
+      ['.count-2 > #profile', [['width', '100%']]],
+      ['.count-3 > #profile', [['width', '50%']]],
+      ['.row-2.col-3 > *', [['float', 'left'], ['width', oneThird], ['padding-bottom', customed]]],
+      ['.row-2.col-3 > * > iframe', [['height', ih3 + 'px'], ['margin-top', (wh2 - ih3) / 2 + 'px']]],
+      ['.row-2.col-3 > #description', [['width', minusOneThird], ['height', '40%']]],
+      ['.count-4 > #profile', [['width', twoThird]]],
+      ['.count-5 > #profile', [['width', oneThird]]],
     ]);
 
     var profile = document.getElementById('profile');
     var data = {
-        "demos": [
-            {
-                "url": "forum/index.html",
-                "labels": ["华丽归来", "配色"],
-                "description": "这是一个花了一下午时间制作的简单页面，你可能觉得内容有些过时。"
-                  +  "没错，你说的对，因为我是在选择一组配色。"
-                  +  "另外，关于微笑的文章也是带给我正能量的来源之一。"
-            },
-            {
-                "url": "order/index.html",
-                "labels": ["主页", "订单"],
-                "description": "这是一个当下流行的公司主页，与视口大小相同的巨幅背景，"
-                  +  "随着页面位置变化动态展示的页头以及一些小元素，通过页面滚动代替多个页面间的跳转。"
-                  +  "另外，一个简单的客户中心，包含了购物车，清单两个的功能。"
-                  +  "配色方面继承forum，用时两天。"
-            },
-            {
-                "url": "o2o/index.html",
-                "labels": ["主页", "订单"],
-                "description": "这个demo看起来有些复杂，其实是之前做的一个上线了的项目。"
-                  +  "为了做成Demos其中之一，包装在iframe中，并且使用nice scroll bar。"
-                  +  "由于旧项目代码量大，有许多新场景下的bug，并且从线上搞了些数据当做mock数据，"
-                  +  "所以，用时比forum还要多一些。"
-            },
-            {
-                "url": "hive/vue/dist/index.html",
-                "labels": ["数据展示", "订单"],
-                "description": "hive这个demo的主要目的是在现有流行框架中使用D3。"
-                  +  "事实上，我以前很崇尚HTML5 API编程，毕竟规范里的特性个个都很经典。"
-                  +  "在人生的艰难时刻，自学Angular.x、React、Vue，并完成同一个Demo。"
-            }
-        ]
+      "demos": [
+        {
+          "url": "forum/index.html",
+          "labels": ["华丽归来", "配色"],
+          "description": "这是一个花了一下午时间制作的简单页面，你可能觉得内容有些过时。"
+          + "没错，你说的对，因为我是在选择一组配色。"
+          + "另外，关于微笑的文章也是带给我正能量的来源之一。"
+        },
+        {
+          "url": "order/index.html",
+          "labels": ["主页", "订单"],
+          "description": "这是一个当下流行的公司主页，与视口大小相同的巨幅背景，"
+          + "随着页面位置变化动态展示的页头以及一些小元素，通过页面滚动代替多个页面间的跳转。"
+          + "另外，一个简单的客户中心，包含了购物车，清单两个的功能。"
+          + "配色方面继承forum，用时两天。"
+        },
+        {
+          "url": "o2o/index.html",
+          "labels": ["主页", "订单"],
+          "description": "这个demo看起来有些复杂，其实是之前做的一个上线了的项目。"
+          + "为了做成Demos其中之一，包装在iframe中，并且使用nice scroll bar。"
+          + "由于旧项目代码量大，有许多新场景下的bug，并且从线上搞了些数据当做mock数据，"
+          + "所以，用时比forum还要多一些。"
+        },
+        {
+          "url": "hive/vue/dist/index.html",
+          "labels": ["数据展示", "订单"],
+          "description": "hive这个demo的主要目的是在现有流行框架中使用D3。"
+          + "事实上，我以前很崇尚HTML5 API编程，毕竟规范里的特性个个都很经典。"
+          + "并且自学Angular.x、React、Vue，并完成同一个Demo。"
+        }
+      ]
     };
 
     var ww = window.window.innerWidth;
     for (var i = 0, rl = data.demos.length; i < rl; i++) {
 
-        var element = document.createElement('div');
-        element.classList.add('click-able');
-        element.setAttribute('data-rel', data.demos[i].description);
-        var s = (~~((1 << 24) * Math.random())).toString(16);
-        element.style.backgroundColor = '#' + '000000'.substring(s.length) + s;
-        element.style.opacity = 0;
+      var element = document.createElement('div');
+      element.classList.add('click-able');
+      element.setAttribute('data-rel', data.demos[i].description);
+      var s = (~~((1 << 24) * Math.random())).toString(16);
+      element.style.backgroundColor = '#' + '000000'.substring(s.length) + s;
+      element.style.opacity = 0;
 
-        var iframe = document.createElement('iframe');
-        iframe.scrolling = 'no';
-        iframe.src = data.demos[i].url;
-        element.appendChild(iframe);
+      var iframe = document.createElement('iframe');
+      iframe.scrolling = 'no';
+      iframe.src = data.demos[i].url;
+      element.appendChild(iframe);
 
-        setTimeout(function (count, elem, before, iframe) {
-            document.body.insertBefore(elem, before);
+      setTimeout(function (count, elem, before, iframe) {
+        document.body.insertBefore(elem, before);
 
-            iframe.contentWindow.onload = function () {
+        iframe.contentWindow.onload = function () {
 
-                iframe.contentDocument.body.style.width = iframe.contentWindow.top.innerWidth + 'px';
-                iframe.contentDocument.body.style.transformOrigin = '0 0 0';
+          iframe.contentDocument.body.style.width = iframe.contentWindow.top.innerWidth + 'px';
+          iframe.contentDocument.body.style.transformOrigin = '0 0 0';
 
-                iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
+          iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
 
-                iframe.contentWindow.addEventListener('resize', function () {
-                    iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
-                });
-            };
+          iframe.contentWindow.addEventListener('resize', function () {
+            iframe.contentDocument.body.style.transform = 'scale(' + (iframe.contentWindow.innerWidth / iframe.contentWindow.top.innerWidth) + ')';
+          });
+        };
 
-            document.body.className = '';
+        document.body.className = '';
 
-            var classList = document.body.classList;
-            var row = 1, col = row + 1;
-            while (true) {
-                if (row * col - count - 1 < col && row * col - count - 1 >= 0) {
-                    break;
-                }
+        var classList = document.body.classList;
+        var row = 1, col = row + 1;
+        while (true) {
+          if (row * col - count - 1 < col && row * col - count - 1 >= 0) {
+            break;
+          }
 
-                if (row === col) {
-                    col++;
-                } else {
-                    row++;
-                }
-            }
+          if (row === col) {
+            col++;
+          } else {
+            row++;
+          }
+        }
 
-            classList.add.apply(classList, ['count-' + count, 'row-' + row, 'col-' + col]);
+        classList.add.apply(classList, ['count-' + count, 'row-' + row, 'col-' + col]);
 
-            setTimeout(function (e) {
-                e.style.opacity = 1;
-            }, 300, elem);
-        }, 2000 * i, i + 1, element, profile, iframe);
+        setTimeout(function (e) {
+          e.style.opacity = 1;
+        }, 300, elem);
+      }, 2000 * i, i + 1, element, profile, iframe);
     }
 
     function go(src) {
-        var a = document.querySelector('a.let-me-go') || document.createElement('a');
-        a.href = src;
-        a.style.display = 'none';
-        a.classList.add('let-me-go');
-        a.setAttribute('target', '_self');
-        document.body.appendChild(a);
-        a.click();
+      var a = document.querySelector('a.let-me-go') || document.createElement('a');
+      a.href = src;
+      a.style.display = 'none';
+      a.classList.add('let-me-go');
+      a.setAttribute('target', '_self');
+      document.body.appendChild(a);
+      a.click();
     }
 
     document.addEventListener('click', function (e) {
-        console.log('christmas', e);
+      console.log('christmas', e);
 
-        if (e.target.classList.contains('click-able')) {
-            var src = e.target.firstElementChild.getAttribute('src');
+      if (e.target.classList.contains('click-able')) {
+        var src = e.target.firstElementChild.getAttribute('src');
 
-            go(src);
-        } else if (e.target.id === 'profile') {
+        go(src);
+      } else if (e.target.id === 'profile') {
 
-            go('profile/index.html');
-        }
+        go('profile/index.html');
+      }
     }, true);
 
     var descElem = document.getElementById('description');
     document.addEventListener('mouseover', function (e) {
-        console.log('christmas', e);
+      console.log('christmas', e);
 
-        if (e.target.classList.contains('click-able')) {
-            // var src = e.target.firstElementChild.getAttribute('src');
+      if (e.target.classList.contains('click-able')) {
+        // var src = e.target.firstElementChild.getAttribute('src');
 
-            descElem.innerHTML = '<div>' + e.target.getAttribute('data-rel') + '</div>';
+        descElem.innerHTML = '<div>' + e.target.getAttribute('data-rel') + '</div>';
 
-            descElem.style.top = e.target.offsetTop + topOffset + 'px';
-            descElem.style.left = e.target.offsetLeft + leftOffset + 'px';
-            descElem.style.zIndex = 1;
+        descElem.style.top = e.target.offsetTop + topOffset + 'px';
+        descElem.style.left = e.target.offsetLeft + leftOffset + 'px';
+        descElem.style.zIndex = 1;
 
-            // go(src);
-        } else if (e.target.id === 'profile') {
+        // go(src);
+      } else if (e.target.id === 'profile') {
 
-            descElem.style.zIndex = -1;
+        descElem.style.zIndex = -1;
 
-            // go('profile/index.html');
-        }
+        // go('profile/index.html');
+      }
     }, true);
-</script>
+
+  </script>
 </body>
+
 </html>
