@@ -74,6 +74,10 @@
       transition: transform 1s ease-in-out;
     }
 
+    body>#description:not(.show) {
+      display: none;
+    }
+
     body>#description:after {
       content: '';
 
@@ -296,6 +300,10 @@
         descElem.style.left = e.target.offsetLeft + leftOffset + 'px';
         descElem.style.zIndex = 1;
 
+        if (!descElem.classList.contains('show')) {
+          descElem.classList.add('show');
+        }
+
         // go(src);
       } else if (e.target.id === 'profile') {
 
@@ -304,7 +312,6 @@
         // go('profile/index.html');
       }
     }, true);
-
   </script>
 </body>
 
